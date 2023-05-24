@@ -5,7 +5,7 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-		<a th:href="@{opere}"><button>Torna indietro</button></a>
+		<a th:href="@{film}"><button>Torna indietro</button></a>
 		<form method="POST" th:object="${opera}">
 			<input type="radio" value="F" id="film" name="tipologia" th:field="*{tipologia}"> <label for="film">film</label>
 			<br>

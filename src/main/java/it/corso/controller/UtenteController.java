@@ -34,11 +34,11 @@ public class UtenteController {
 	public String controllaUtente(
 			@RequestParam (name = "username") String username,
 			@RequestParam (name = "password") String password,
-			HttpSession session)
+		HttpSession session)
 	{
 		if (!utenteService.controlloLogin(session, username, password))
 			return "redirect:/utente?le";
-		return "reserved"; // dove portiamo l'utente dopo avere loggato
+		    return "redirect:/reserved"; // dove portiamo l'utente dopo avere loggato
 	}
 	
 }

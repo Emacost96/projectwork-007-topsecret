@@ -9,4 +9,6 @@ public interface PrenotazioneService {
 	Prenotazione findPrenotazioneById(int id);
 	List<Prenotazione> getPrenotazioni();
 	void eliminaPrenotazione(Prenotazione prenotazione);
+
+	List<Prenotazione> getPrenotazioneByIdUtente(int id);
 }

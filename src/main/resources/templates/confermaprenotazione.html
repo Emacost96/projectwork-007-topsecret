@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
@@ -7,25 +7,11 @@
 	<body>
 		<!-- Dati utente -->
 		<div>
-			<p th:text="'Ciao ' + ${utente.nome} + ${utente.cognome} ', benvenuto nell'area riservata!'"></p>
+			<p th:text="'Conferma la tua prenotazione'"></p>
 			
-			<h3>Dati Utente</h3>
-			<ul class="list-group">
-			  <li class="list-group-item" th:text="'Nome: ' + ${utente.nome}"></li>
-			  <li class="list-group-item" th:text="'Cognome: ' + ${utente.cognome}"></li>
-			  <li class="list-group-item" th:text="'Email: ' + ${utente.email}"></li>
-			  <li class="list-group-item" th:text="'Username: ' + ${utente.username}"></li>
-			</ul>
-		</div>
-		<!-- Fine dati utente -->
-		<div>
-			<h3>Dettaglio</h3>
-			<ul class="list-group">
-			  <li class="list-group-item" th:text="'Nome: ' + ${utente.nome}"></li>
-			  <li class="list-group-item" th:text="'Cognome: ' + ${utente.cognome}"></li>
-			  <li class="list-group-item" th:text="'Email: ' + ${utente.email}"></li>
-			  <li class="list-group-item" th:text="'Username: ' + ${utente.username}"></li>
-			</ul>
+			<p th:text="'Si desidera confermare la prenotazione di: ' + ${opera.titolo}"></p>
+			
+			<a th:href="@{prenota/registra}"><button>Conferma</button></a>
 		</div>
 	</body>
 </html>

@@ -1,5 +1,6 @@
 package it.corso.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,19 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	@Override
 	public void eliminaPrenotazione(Prenotazione prenotazione) {
 		prenotazioneDao.delete(prenotazione);
+	}
+
+	@Override
+	public List<Prenotazione> getPrenotazioneByIdUtente(int id) {
+	    List<Prenotazione> prenotazioniUtente = new ArrayList<>();
+	    List<Prenotazione> prenotazioni = (List<Prenotazione>) prenotazioneDao.findAll();
+
+	    for (Prenotazione p : prenotazioni) {
+		if (p.getUtente().getId() == id) {
+		    prenotazioniUtente.add(p);
+		}
+	    }
+	    return prenotazioniUtente;
 	}
 
 }

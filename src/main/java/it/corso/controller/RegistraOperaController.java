@@ -7,13 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import it.corso.model.Opera;
 import it.corso.service.OperaService;
 
 @Controller
-@RequestMapping("/registraOpera")
+@RequestMapping("/registraopera")
 public class RegistraOperaController {
 	
 	@Autowired
@@ -32,4 +31,6 @@ public class RegistraOperaController {
 		operaService.registraOpera(opera);
 		return "redirect:/opere";
 	}
+
 }
+

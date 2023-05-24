@@ -8,7 +8,8 @@
 	<body>
 		<!-- Dati utente -->
 		<div>
-			<p th:text="'Ciao ' + ${utente.nome} + ${utente.cognome} ', benvenuto nell'area riservata!'"></p>
+			<a th:href="@{film}">Torna alla Home</a>
+			<h2 th:text="'Ciao ' + ${utente.nome} + ' ' + ${utente.cognome} + ' benvenuto nella tua area riservata' "></h2>
 			
 			<h3>Dati Utente</h3>
 			<ul class="list-group">
@@ -18,18 +19,17 @@
 			  <li class="list-group-item" th:text="'Username: ' + ${utente.username}"></li>
 			</ul>
 		</div>
-		<!-- Fine dati utente -->
-		<!-- Prenotazioni -->
+		
 		<div>
-		<div class="card" style="width: 18rem;" th:each="p : ${prenotazioni}">
-  			<div class="card-body">
-    		<div class="d-flex justify-content-between align-items-center mb-3 text-center">
-      			<h5 class="card-title mt-2" th:text="${p.opera.titolo}"></h5>
-				<p class="card-text" th:text="'Data di prenotazione: ' + ${p.dataOraPrenotazione}"></p>
-				<a th:href="#"><button th:text="'Riconsegna'"></button></a>
-    		</div>
-  			</div>
-		</div>
+			<div class="card" style="width: 18rem;" th:each="p : ${prenotazioni}">
+	  			<div class="card-body">
+	    		<div class="d-flex justify-content-between align-items-center mb-3 text-center">
+	      			<h5 class="card-title mt-2" th:text="${p.opera.titolo}"></h5>
+					<p class="card-text" th:text="'Data di prenotazione: ' + ${p.dataOraPrenotazione}"></p>
+	    		</div>
+	  			</div>
+			</div>
+			
 		</div>
 	</body>
 </html>
