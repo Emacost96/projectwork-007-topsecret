@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<!-- Dati utente -->
+		<div>
+			<p th:text="'Ciao ' + ${utente.nome} + ${utente.cognome} ', benvenuto nell'area riservata!'"></p>
+			
+			<h3>Dati Utente</h3>
+			<ul class="list-group">
+			  <li class="list-group-item" th:text="'Nome: ' + ${utente.nome}"></li>
+			  <li class="list-group-item" th:text="'Cognome: ' + ${utente.cognome}"></li>
+			  <li class="list-group-item" th:text="'Email: ' + ${utente.email}"></li>
+			  <li class="list-group-item" th:text="'Username: ' + ${utente.username}"></li>
+			</ul>
+		</div>
+		<!-- Fine dati utente -->
+		<div>
+			<h3>Dettaglio</h3>
+			<ul class="list-group">
+			  <li class="list-group-item" th:text="'Nome: ' + ${utente.nome}"></li>
+			  <li class="list-group-item" th:text="'Cognome: ' + ${utente.cognome}"></li>
+			  <li class="list-group-item" th:text="'Email: ' + ${utente.email}"></li>
+			  <li class="list-group-item" th:text="'Username: ' + ${utente.username}"></li>
+			</ul>
+		</div>
+	</body>
+</html>

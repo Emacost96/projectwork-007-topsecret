@@ -1,24 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css" type="text/css">
+    <title>007</title>
+    <link href="../static/index.css" rel="stylesheet">
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class="grid-container"> <!-- catalogo -->
-        <div class="grid-item">
-            <table> <!-- aggiungiamo qui il th:each -->
-                <tr>
-                    <td>Locandina</td>
-                </tr>
-                <tr>
-                    <td>Titolo</td>
-                </tr>
-            </table>
+    
+    <!-- header design -->
+    <header class="header">
+        <a href="#" class="logo">007.</a>
+        <!--icona del menu che appare in modalità responsive-->
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <nav class="navbar">
+            <a th:href="" class="active">Home</a>
+            <a href="">Opere</a>
+            <a href="">Catalogo</a>
+        <!--<a href="">Parliamone</a>-->
+            <a href="">Login</a>
+        </nav>
+    </header>
+
+    <!-- home section design -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, I'm <span>James Bond</span></h1>
+            <div class="text-animate">
+                <h3>Secret Agent</h3>
+            </div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero non temporibus quaerat, 
+                vel consequatur, molestias et exercitationem reiciendis nemo eum fugit accusamus 
+                numquam optio eius eaque. Delectus dolorem iste corrupti?</p>
+
+            <div class="btn-box">
+                <a class="btn" th:href="@{film}">Film</a>
+                <a class="btn" th:href="@{libri}">Libri</a>
+            </div>
         </div>
-    </div>
+
+        <div class="home-sci">
+            <a href=""><i class='bx bxl-facebook'></i></a>
+            <a href=""><i class='bx bxl-twitter'></i></a>
+            <a href=""><i class='bx bxl-instagram'></i></a>
+        </div>
+    </section>
+
+
+    <script src="js/script.js"></script>
 </body>
 </html>

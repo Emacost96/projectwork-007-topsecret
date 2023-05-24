@@ -1,0 +1,15 @@
+package it.corso.service;
+
+import java.util.List;
+
+import it.corso.model.Utente;
+import jakarta.servlet.http.HttpSession;
+
+public interface UtenteService {
+	void registraUtente(Utente utente);
+	Utente findUtentebyId(int id);
+	List<Utente> getUtenti();
+	void eliminaUtente(Utente utente);
+	boolean controlloLogin(HttpSession session, String username, String password);
+	boolean controlloRegistrazione(String username, String email);
+}

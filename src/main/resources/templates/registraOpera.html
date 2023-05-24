@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<a th:href="@{opere}"><button>Torna indietro</button></a>
+		<form method="POST" th:object="${opera}">
+			<input type="radio" value="F" id="film" name="tipologia" th:field="*{tipologia}"> <label for="film">film</label>
+			<br>
+			<input type="radio" value="L" id="libro" name="tipologia" th:field="*{tipologia}"> <label for="libro">libro</label>
+			<br>
+			<input type="text" placeholder="titolo" th:field="*{titolo}">
+			<br>
+			<input type="number" id="anno di pubblicazione" placeholder="anno di pubblicazione" th:field="*{annoDiPubblicazione}" required>
+			<br>
+			<textarea id="trama" placeholder="trama" th:field="*{trama}"></textarea>
+			<br>
+			<input type="text" placeholder="editore" th:field="*{editore}">
+			<br>
+			<input type="text" placeholder="regista" th:field="*{regista}">
+			<br>
+			<textarea id="cast" placeholder="cast" th:field="*{cast}" required></textarea>
+			<br>
+			<input type="text" placeholder="isbn" th:field="*{isbn}">
+			<br>
+			<input type="file" th:field="*{immagine}">
+			<br>
+			<input type="submit" value="registra opera">
+		</form>
+	</body>
+</html>
