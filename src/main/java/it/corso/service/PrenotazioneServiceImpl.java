@@ -1,13 +1,14 @@
 package it.corso.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.corso.dao.PrenotazioneDao;
+import it.corso.dao.UtenteDao;
 import it.corso.model.Prenotazione;
+import it.corso.model.Utente;
 
 @Service
 public class PrenotazioneServiceImpl implements PrenotazioneService {
@@ -15,6 +16,9 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	@Autowired
 	private PrenotazioneDao prenotazioneDao;
 	
+	@Autowired
+	private UtenteDao utenteDao;
+
 	@Override
 	public void registraPrenotazione(Prenotazione prenotazione) {
 		prenotazioneDao.save(prenotazione);
@@ -37,15 +41,9 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 
 	@Override
 	public List<Prenotazione> getPrenotazioneByIdUtente(int id) {
-	    List<Prenotazione> prenotazioniUtente = new ArrayList<>();
-	    List<Prenotazione> prenotazioni = (List<Prenotazione>) prenotazioneDao.findAll();
 
-	    for (Prenotazione p : prenotazioni) {
-		if (p.getUtente().getId() == id) {
-		    prenotazioniUtente.add(p);
-		}
-	    }
-	    return prenotazioniUtente;
+	    Utente utente = utenteDao.findById(id).get();
+	    return utente.getPrenotazioni();
 	}
 
 }
