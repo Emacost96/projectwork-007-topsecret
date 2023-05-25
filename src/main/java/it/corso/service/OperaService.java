@@ -9,6 +9,7 @@ public interface OperaService {
 	Opera findOperaById(int id);
 	List<Opera> getFilm();
 	List<Opera> getLibri();
+	List<Opera> getOpere();
 	void eliminaOpera(Opera opera);
 	
 }

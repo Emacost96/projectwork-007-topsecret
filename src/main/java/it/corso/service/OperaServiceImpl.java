@@ -66,4 +66,10 @@ public class OperaServiceImpl implements OperaService {
 		return libri;
 	}
 
+	@Override
+	public List<Opera> getOpere() {
+		
+		return (List<Opera>) operaDao.findAll();
+	}
+
 }

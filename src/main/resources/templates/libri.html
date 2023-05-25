@@ -10,11 +10,13 @@
   			<div class="card-body">
     		<div class="d-flex justify-content-between align-items-center mb-3 text-center">
       			<h5 class="card-title mt-2" th:text="${o.titolo}"></h5>
-      			<a th:href="@{opere/elimina(id=${o.id})}"><button type="button" class="btn btn-warning mt-2">Elimina</button></a>
+      			<a  th:href="@{prenota(id=${o.id})}" th:if="${o.prenotato}==false"><button th:disabled="${o.prenotato} == true" type="button" class="btn btn-warning mt-2">Prenota opera</button></a>
+      			<button th:if="${o.prenotato == true}"  type="button" class="btn btn-danger mt-2">Opera non disponibile</button>
+      			
     		</div>
   			</div>
 		</div>
-		<a th:href="@{registraOpera}"><button type="button" class="btn btn-warning m-3">Aggiungi Opera</button></a>
+		
   
 	</body>
 </html>

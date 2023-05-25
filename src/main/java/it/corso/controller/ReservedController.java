@@ -25,6 +25,8 @@ public class ReservedController {
 	@GetMapping
 	public String getPage(HttpSession session, Model model) {
 
+		if(session.getAttribute("utente") == null)
+			return "redirect:/utente";
 	    Utente utente = (Utente) session.getAttribute("utente");
 	    model.addAttribute("utente", utente);
 

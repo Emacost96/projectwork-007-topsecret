@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import ch.qos.logback.core.joran.conditional.ElseAction;
 import it.corso.model.Utente;
+import it.corso.service.AdminService;
 import it.corso.service.UtenteService;
 import jakarta.servlet.http.HttpSession;
 
@@ -16,6 +18,8 @@ import jakarta.servlet.http.HttpSession;
 @RequestMapping("/utente")
 public class UtenteController {
 	
+	@Autowired
+	private AdminService adminService;
 	@Autowired
 	private UtenteService utenteService;
 	
@@ -36,9 +40,19 @@ public class UtenteController {
 			@RequestParam (name = "password") String password,
 		HttpSession session)
 	{
-		if (!utenteService.controlloLogin(session, username, password))
-			return "redirect:/utente?le";
-		    return "redirect:/reserved"; // dove portiamo l'utente dopo avere loggato
-	}
+		if (adminService.checkAdminLogin(session, username, password))
+			return "redirect:/admin";
+		
+		
+		else if(utenteService.controlloLogin(session, username, password))
+			return "redirect:/reserved"; // dove portiamo l'utente dopo avere loggato
+		
+		else
+		return "redirect:/utente?le"; 
+		    
+		   
+	} 
+	
+	
 	
 }

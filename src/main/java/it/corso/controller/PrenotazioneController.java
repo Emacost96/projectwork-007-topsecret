@@ -59,13 +59,5 @@ public class PrenotazioneController {
 	return "redirect:/reserved";
     }
 
-    @GetMapping("/ripristina")
-    public String ripristinaDisponibilità(@RequestParam("id") int id) {
-
-	Opera opera = operaService.findOperaById(id);
-	opera.setPrenotato(false);
-	operaService.registraOpera(opera);
-
-	return "redirect:/film";
-    }
+    
 }
