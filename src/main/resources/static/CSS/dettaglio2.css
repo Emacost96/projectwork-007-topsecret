@@ -1,0 +1,268 @@
+html {
+    height: 100%;
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'segoe ui', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    /* transition: all 0.35 linear; */
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+}
+
+/* header  */
+
+/* creo delle variabili per poterle riutilizzare nelle varie sezioni */
+:root {
+    --bg-color: rgb(31, 31, 31);
+    --secondbg-color: rgb(55, 54, 54);
+    --text-color: white;
+    --main-color: gold;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: linear-gradient(rgba(0, 0, 0, 0.87),rgba(0, 0, 0, 0.778),transparent);
+    transition: .4s;
+}
+
+.header.sticky {
+    background: linear-gradient(rgba(0, 0, 0, 0.97),rgba(0, 0, 0, 0.907)transparent);
+}
+
+.logo {
+    text-decoration: none !important;
+    font-size: 2.9rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.header a:hover,
+.header a.active {
+    color: var(--text-color);
+}
+.header h2 {
+    float: right;
+    margin: 1.8vh;
+    font-size: 2.5rem;
+}
+
+.icon-logo {
+    text-decoration: none !important;
+    width: 64px;
+    margin-right: 15px;
+    margin-top: 2px;
+}
+
+.navbar a{
+    text-decoration: none;
+    font-size: 2.1rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s;
+}
+
+.navbar a:hover{
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 4rem;
+    color: var(--text-color);
+    cursor: pointer;
+    float: right;
+    display: none;
+}
+
+
+/* contenuto */
+.sezione1 {
+    height: 75vh;
+
+    background-image: url("images/JamesBond_sfondo2.jpg");
+    background-size: cover;
+    
+}
+
+.container {
+   
+    height: 75vh;
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    grid-gap: 32px;
+    backdrop-filter: blur(12px) contrast(80%);
+    color: white;
+}
+
+.info {
+    padding-top: 24px;
+    padding-left: 60px;
+}
+
+.poster {
+    margin-left: 20px;
+
+    width: 480px;
+    height: 71vh;
+    overflow: hidden;
+
+    align-items: center;
+    justify-content: center;
+    /* background: url(immagini/skyfall-locandina.jpg); */
+    background-size: cover;
+    background-position: center;
+    background-position: fixed;
+    display: flex;
+    
+}
+
+.poster img {
+    width: 480px;
+    height: 65vh;
+    object-fit: cover;
+    overflow: hidden;
+    background-attachment: fixed;
+}
+
+
+.info > div {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    margin-right: 32px;
+}
+
+.movie-title {
+    font-size: 64px;
+    font-weight: bold;
+    background-clip: text;
+    color: rgb(202, 174, 15);
+}
+
+.movie-detail .set {
+    display: inline-block;
+    margin-right: 64px;
+}
+
+.movie-detail label {
+    font-size: 14px;
+    color: white;
+    display: block;
+}
+
+.movie-detail span {
+    line-height: 22px;
+}
+
+.movie-description {
+    line-height: 24px;
+}
+
+.movie-cast .titolo {
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.movie-cast .list {
+    display: grid;
+    grid-template-columns: repeat(6,120px);
+    grid-gap: 32px;
+}
+
+.movie-cast .cast {
+    width: 120px;
+    height: 160px;
+    cursor: pointer;
+}
+
+.movie-cast label {
+    margin-top: 8px;
+    display: block;
+}
+
+
+/* carosello immagini */
+
+.carosello{
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    background-color: rgba(25,25,25,255);
+    overflow: hidden;
+}
+
+.wrapper{
+    max-width: 200vh;
+    position: relative;
+}
+
+.wrapper i{
+    top: 50%;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    position: absolute;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 46px;
+    background: #d4d4d477;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.wrapper i:first-child{
+    left: -23px;
+    display: none;
+}
+
+.wrapper i:last-child{
+    right: -23px;
+}
+
+.wrapper .carousel {
+    font-size: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+.carousel.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging.img{
+    pointer-events: none;
+}
+
+.carousel img{
+    height: 220px;
+    object-fit: cover;
+    margin-left: 30px; /* controllare in js */
+    width: calc(100% / 5);
+}
+
+.carousel img:first-child{
+    margin-left: 0px;
+}

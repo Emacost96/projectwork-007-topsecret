@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dettaglio2.css">
+    <script src="carosello.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Quicksand&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <title>Dettaglio</title>
+</head>
+
+<body>
+    <!-- header  -->
+    <header class="header slide_text">
+        <a href="#" class="logo"><img src="images/icon007.png" class="icon-logo"><h2>James Bond</h2></a>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#history">Storia</a>
+            <a href="#">Catalogo</a>
+        <!--<a href="">Parliamone</a>-->
+            <a href="#">Login</a>
+
+            <span class="active-nav"></span>
+        </nav>
+        <!--icona del menu che appare in modalità responsive-->
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+    <!-- sezione immagine e dettaglio -->
+    <section class="sezione1">
+        <div class="container">
+            <div class="poster">
+                <img src="images/skyfall-cover.jpeg" alt="">
+            </div>
+            <div class="info">
+                <div class="movie-title"> Titolo film</div>
+
+                <div class="movie-detail">
+                    <div class="set">
+                        <label>Data rilascio</label>
+                        <span>3 Marzo 2021</span>
+                    </div>
+                    <div class="set">
+                        <label>Durata</label>
+                        <span>1 Hr 47 Min</span>
+                    </div>
+                    <div class="set">
+                        <label>Genere</label>
+                        <span>Avventura</span>
+                    </div>
+                </div>
+                <div class="movie-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium facilis
+                    consequuntur sint sed quos ut voluptatibus nulla cum minima itaque perferendis saepe accusamus pariatur,
+                    recusandae, in consequatur. Necessitatibus, tempora nesciunt?</div>
+                <div class="movie-cast">
+                    <div class="titolo">Cast</div>
+                    <div class="list">
+                        <div class="cast">
+                            <p>regista</p>
+                        </div>
+                        <div class="cast">
+                            <p>attori1, attori2, attori3</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- carosello immagini -->
+
+    <div class="carosello">
+        <div class="wrapper">
+            <i id="left" class='bx bx-chevrons-left'></i>
+            <div class="carousel">
+                <img src="/images/img1.jpg">
+                <img src="/images/img2.jpg">
+                <img src="/images/img3.jpg">
+                <img src="/images/img4.jpg">
+                <img src="/images/img5.jpg">
+                <img src="/images/img6.jpg">
+                <img src="/images/img7.jpg">
+            </div>
+            <i id="right" class='bx bx-chevrons-right'></i>
+        </div>
+    </div>
+
+</body>
+
+</html>
