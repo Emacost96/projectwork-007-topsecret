@@ -1,0 +1,146 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>007</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="indexBOND.css" rel="stylesheet">
+    </head>
+
+<body>
+   
+    <!-- header design -->
+    <header class="header">
+        <a href="#" class="logo"><img src="images/icon007.png" class="icon-logo">James Bond</a>
+        <!--icona del menu che appare in modalità responsive-->
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <nav class="navbar">
+            <a href="" class="active">Home</a>
+            <a href="">Opere</a>
+            <a href="">Catalogo</a>
+        <!--<a href="">Parliamone</a>-->
+            <a href="">Login</a>
+
+            <span class="active-nav"></span>
+        </nav>
+       
+    </header>
+
+    <section class="hero">
+        <div class="text">
+        
+         
+     </div>
+    </section>
+    <section>
+       
+    <div>
+        <div class="row">
+            <div class="tab-wrapper col text-right">
+                <div class="btn-box btn-group" role="group" aria-label="Button group">
+                    <button class="btn tab-label active" id="libriButton">Libri</button>
+                    <button class="btn tab-label active" id="filmButton">Film</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="libriSection">
+            <div class="text-animate">
+                <h3 class="h3">Libri</h3>
+            </div>
+            <div class="col">
+                
+                <div th:each="libro : ${libri}" class="cardCATALOGO-section col-md-3 bordino">
+                    <div class="cardCATALOGO">
+                        <img src="008.jpg" alt="testo_alternativo" class="img-fluid custom-img ">
+
+                        <img th:src="${libro.immagine}" class="cardCATALOGO-img-top" alt="Immagine libro">
+                        <div class="cardCATALOGO-body">
+                            <h5 class="cardCATALOGO-title" th:text="${libro.titolo}"></h5>
+                            <p class="cardCATALOGO-text"><strong class="strong">Anno:</strong> <span th:text="${libro.anno}"></span></p>
+                            <p class="cardCATALOGO-text"><strong class="strong">Editore:</strong> <span th:text="${libro.editore}"></span></p>
+                            <p class="cardCATALOGO-text"><strong class="strong">ISBN:</strong> <span th:text="${libro.isbn}"></span></p>
+                            <div class="btn-box">
+                            <button class="btn btn-primary btn-dettaglio" id="dettaglioButton">Dettaglio</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        
+        <div class="row" id="filmSection" style="display: none;">
+            <div class="text-animate">
+                <h3 class="h3">Film</h3>
+            </div>
+            <div class="col">
+                <!-- "${film.immagine}" -->
+                <div th:each="film : ${film}" class="cardCATALOGO-section col-md-3 bordino">
+                    <div class="cardCATALOGO">
+                        <img th:src= "${film.immagine}" class="cardCATALOGO-img-top" alt="Immagine film">
+                        <div class="cardCATALOGO-body">
+                            <h5 class="cardCATALOGO-title" th:text="${film.titolo}">titolo</h5>
+                            <p class="cardCATALOGO-text"><strong class="strong">titolo:</strong> <span th:text="${film.anno}"></span></p>
+                            <p class="cardCATALOGO-text"><strong class="strong">Regista:</strong> <span th:text="${film.regista}"></span></p>
+                            <p class="cardCATALOGO-text"><strong class="strong">Genere:</strong> <span th:text="${film.genere}"></span></p>
+                            <div class="btn-box">
+                                <button class="btn btn-primary btn-dettaglio" id="dettaglioButton">Dettaglio</button>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- JavaScript--> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-TxO+FKuqkWMB40IR+8C3OaK4OYBYsX7hvtjVNm9pA1g8xRvbGRo57pJRM4phgrV2" crossorigin="anonymous"></script>
+    <script>
+        // Codice JavaScript per il toggle tra sezioni "Libri" e "Film"
+        document.getElementById('libriButton').addEventListener('click', function() {
+            document.getElementById('libriSection').style.display = 'block';
+            document.getElementById('filmSection').style.display = 'none';
+            document.getElementById('libriButton').classList.add('active');
+            document.getElementById('filmButton').classList.remove('active');
+        });
+        document.getElementById('filmButton').addEventListener('click', function() {
+            document.getElementById('libriSection').style.display = 'none';
+            document.getElementById('filmSection').style.display = 'block';
+            document.getElementById('libriButton').classList.remove('active');
+            document.getElementById('filmButton').classList.add('active');
+        });
+        document.getElementById('menu-icon').addEventListener('click', function() {
+            document.querySelector('.navbar').classList.toggle('active');
+            document.getElementById('menu-icon').classList.toggle('bx-x');
+        });
+var cards = document.getElementsByClassName('cardCATALOGO');
+
+for (var i = 0; i < cards.length; i++) {
+  cards[i].addEventListener('mouseover', function() {
+    var dettaglioButton = this.querySelector('.btn-dettaglio');
+    dettaglioButton.style.display = 'inline-block';
+  });
+
+  
+  cards[i].addEventListener('mouseleave', function() {
+    
+    var dettaglioButton = this.querySelector('.btn-dettaglio');
+   
+    dettaglioButton.style.display = 'none';
+  });
+}
+
+    </script>
+</body>
+</html>

@@ -18,7 +18,7 @@
         
         <div class="row" id="libriSection">
             <div class="col">
-                <h2>Libri</h2>
+                <h3>Libri</h3>
                 <div th:each="libro : ${libri}" class="card" class="col-3">
                     <img th:src="${libro.immagine}" class="card-img-top" alt="Immagine libro">
                     <div class="card-body">
@@ -33,7 +33,7 @@
         
         <div class="row" id="filmSection">
             <div class="col">
-                <h2>Film</h2>
+                <h3>Film</h3>
                 <div th:each="film : ${film}" class="card" class="col-3">
                     <img th:src="${film.immagine}" class="card-img-top" alt="Immagine film">
                     <div class="card-body">
