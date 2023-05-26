@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dettaglio2.css">
-    <script src="carosello.js" defer></script>
+    <link rel="stylesheet" href="CSS/dettaglio.css">
+    <script src="JS/carosello.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Quicksand&display=swap"
@@ -17,16 +17,16 @@
 </head>
 
 <body>
-    <!-- header  -->
+    <!-- header-->
     <header class="header slide_text">
-        <a href="#" class="logo"><img src="images/icon007.png" class="icon-logo"><h2>James Bond</h2></a>
+        <a th:href="@{index}" class="logo"><img src="images/icon007.png" class="icon-logo"><h2>James Bond</h2></a>
 
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#history">Storia</a>
-            <a href="#">Catalogo</a>
+            <a th:href="@{catalogo}">Catalogo</a>
         <!--<a href="">Parliamone</a>-->
-            <a href="#">Login</a>
+            <a th:href="@{registrazione}">Login</a>
 
             <span class="active-nav"></span>
         </nav>
@@ -38,26 +38,26 @@
     <section class="sezione1">
         <div class="container">
             <div class="poster">
-                <img src="images/skyfall-cover.jpeg" alt="">
+                <img th:src="@{opera.immagine}" alt="">
             </div>
             <div class="info">
-                <div class="movie-title"> Titolo film</div>
+                <div class="movie-title" th:text="'Titolo film: ' + ${opera.titolo}"> Titolo film</div>
 
                 <div class="movie-detail">
                     <div class="set">
                         <label>Data rilascio</label>
                         <span>3 Marzo 2021</span>
                     </div>
-                    <div class="set">
+                    <!-- <div class="set">
                         <label>Durata</label>
                         <span>1 Hr 47 Min</span>
-                    </div>
+                    </div> -->
                     <div class="set">
                         <label>Genere</label>
                         <span>Avventura</span>
                     </div>
                 </div>
-                <div class="movie-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium facilis
+                <div class="movie-description" th:text="${opera.trama}">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium facilis
                     consequuntur sint sed quos ut voluptatibus nulla cum minima itaque perferendis saepe accusamus pariatur,
                     recusandae, in consequatur. Necessitatibus, tempora nesciunt?</div>
                 <div class="movie-cast">

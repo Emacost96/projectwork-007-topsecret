@@ -97,7 +97,7 @@ body {
 .sezione1 {
     height: 75vh;
 
-    background-image: url("images/JamesBond_sfondo2.jpg");
+    background-image: url("/images/JamesBond_sfondo2.jpg");
     background-size: cover;
     
 }
