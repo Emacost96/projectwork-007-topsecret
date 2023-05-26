@@ -33,7 +33,7 @@ public class RegistrazioneController {
 		if(utenteService.controlloRegistrazione(utente.getUsername(), utente.getEmail()))
 		{
 			utenteService.registraUtente(utente);
-			return "redirect:/index";
+			return "redirect:/registrazione";
 		}
 		return "redirect:/registrazione";
 	}

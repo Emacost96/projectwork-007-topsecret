@@ -4,7 +4,7 @@
 }
 
 body {
-    background: linear-gradient(rgba(5, 5, 5, 0.668),rgba(5, 5, 5, 0.488)), url(images/spectre.png) no-repeat;
+    background: linear-gradient(rgba(5, 5, 5, 0.668),rgba(5, 5, 5, 0.488)), url(/images/spectre.png) no-repeat;
     background-size: cover;
     display: flex;
     justify-content: center;
