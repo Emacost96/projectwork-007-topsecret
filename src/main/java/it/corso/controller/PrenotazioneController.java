@@ -36,6 +36,9 @@ public class PrenotazioneController {
     @GetMapping
     public String getPage(Model model, @RequestParam("id") int id, HttpSession session) {
 
+	if (session.getAttribute("utente") == null)
+	    return "redirect:/utente";
+
 	opera = operaService.findOperaById(id);
 	opera.setPrenotato(true);
 

@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<a th:href="@{film}"><button>Torna indietro</button></a>
-		<form method="POST" th:object="${opera}">
+		<form method="POST" enctype="multipart/form-data" th:object="${opera}">
 			<input type="radio" value="F" id="film" name="tipologia" th:field="*{tipologia}"> <label for="film">film</label>
 			<br>
 			<input type="radio" value="L" id="libro" name="tipologia" th:field="*{tipologia}"> <label for="libro">libro</label>
@@ -25,7 +25,7 @@
 			<br>
 			<input type="text" placeholder="isbn" th:field="*{isbn}">
 			<br>
-			<input type="file" th:field="*{immagine}">
+			<input type="file" th:field="*{fileImmagine}">
 			<br>
 			<input type="submit" value="registra opera">
 		</form>

@@ -1,6 +1,8 @@
 package it.corso.service;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,8 @@ public class OperaServiceImpl implements OperaService {
 	
 	@Override
 	public void registraOpera(Opera opera) {
+
+
 		if(opera.getTipologia().equals("F")) 
 		{
 			opera.setEditore(null);
@@ -26,6 +30,22 @@ public class OperaServiceImpl implements OperaService {
 			opera.setRegista(null);
 			opera.setCast(null);
 		}
+		
+
+
+		if (opera.getFileImmagine() != null && !opera.getFileImmagine().isEmpty()) {
+		    try {
+			String contentType = opera.getFileImmagine().getContentType();
+
+			opera.setImmagine(
+				"data:" + contentType + ";base64,"
+					+ Base64.getEncoder().encodeToString(opera.getFileImmagine().getBytes()));
+		    } catch (IOException e) {
+			// TODO Auto-generated catch blocks
+			e.printStackTrace();
+		    }
+		}
+
 		operaDao.save(opera);
 	}
 

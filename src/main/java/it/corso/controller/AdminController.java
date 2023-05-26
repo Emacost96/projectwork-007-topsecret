@@ -37,7 +37,7 @@ public class AdminController {
 	opera.setPrenotato(false);
 	operaService.registraOpera(opera);
 
-	return "redirect:/film";
+	return "redirect:/admin";
     }
 	
 	@PostMapping

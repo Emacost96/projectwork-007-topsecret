@@ -1,11 +1,14 @@
 package it.corso.model;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Pattern;
 
@@ -50,6 +53,17 @@ public class Opera {
 	@Column(name = "immagine")
 	private String immagine;
 	
+	@Transient
+	private MultipartFile fileImmagine;
+
+	public MultipartFile getFileImmagine() {
+	    return fileImmagine;
+	}
+
+	public void setFileImmagine(MultipartFile fileImmagine) {
+	    this.fileImmagine = fileImmagine;
+	}
+
 	@Column(name = "prenotato")
 	private boolean prenotato;
 
