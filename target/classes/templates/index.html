@@ -1,56 +1,207 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>007</title>
-    <link href="../static/index.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link href="index.js" rel="script">
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <!-- box icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--favicon-->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
     
     <!-- header design -->
     <header class="header">
-        <a href="#" class="logo">007.</a>
+        <a href="#" class="logo"><img src="images/icon007.png" class="icon-logo"><h2>James Bond</h2></a>
+
+        <nav class="navbar slide_text">
+            <a href="#home" class="active">Home</a>
+            <a href="#history">Storia</a>
+            <a href="#">Catalogo</a>
+        <!--<a href="">Parliamone</a>-->
+            <a href="#">Login</a>
+
+            <span class="active-nav"></span>
+        </nav>
         <!--icona del menu che appare in modalità responsive-->
         <div class="bx bx-menu" id="menu-icon"></div>
-
-        <nav class="navbar">
-            <a th:href="" class="active">Home</a>
-            <a href="">Opere</a>
-            <a href="">Catalogo</a>
-        <!--<a href="">Parliamone</a>-->
-            <a href="">Login</a>
-        </nav>
     </header>
 
     <!-- home section design -->
-    <section class="home" id="home">
+    <section class="section_1 home" id="home">
         <div class="home-content">
-            <h1>Hi, I'm <span>James Bond</span></h1>
-            <div class="text-animate">
-                <h3>Secret Agent</h3>
+            <h1 class="slide_text">My name is Bond...</h1> 
+            <h1 class="slide_text"><span>James Bond.</span></h1>
+            <br>
+            <div class="text-animate slide_text">
+                <h3>Secret Agent 007</h3>
             </div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero non temporibus quaerat, 
-                vel consequatur, molestias et exercitationem reiciendis nemo eum fugit accusamus 
-                numquam optio eius eaque. Delectus dolorem iste corrupti?</p>
-
+            <p class="slide_text">Ho imparato a vivere nel pericolo, a sedurre con uno sguardo e 
+              a combattere senza pietà. La mia missione è proteggere il mondo, 
+              sfidando il male in tutte le sue forme. La mia arma più potente 
+              è l'intelligenza, la mia determinazione e il mio fascino irresistibile. 
+              Non esito a mettere a rischio la mia vita per il bene comune.</p>
+            <br>
             <div class="btn-box">
-                <a class="btn" th:href="@{film}">Film</a>
-                <a class="btn" th:href="@{libri}">Libri</a>
+                <a href="#" class="btn">Film</a>
+                <a href="#" class="btn">Libri</a>
             </div>
         </div>
 
         <div class="home-sci">
-            <a href=""><i class='bx bxl-facebook'></i></a>
-            <a href=""><i class='bx bxl-twitter'></i></a>
-            <a href=""><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-facebook' ></i></a>
+            <a href="#"><i class='bx bxl-twitter' ></i></a>
+            <a href="#"><i class='bx bxl-instagram' ></i></a>
+        </div>
+        <!--immagine home in hover-->
+        <div class="home-imgHover">
+          <a href="#"><i class='bx bx-chevrons-left'></i></a>
+          <!--carosel-->
+          <div id="carouselExampleSlidesOnly" class="caro_index carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card_index card" style="width: 30rem;">
+                  <img src="images/img1.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">TITOLO</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card_index card" style="width: 30rem;">
+                  <img src="images/img2.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">TITOLO</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card_index card" style="width: 30rem;">
+                  <img src="images/img3.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">TITOLO</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="carouselExampleSlidesOnly" class="caro_index carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card_index card" style="width: 30rem;">
+                  <img src="images/img4.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">TITOLO</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card_index card" style="width: 30rem;">
+                  <img src="images/img5.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">TITOLO</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card_index card" style="width: 30rem;">
+                  <img src="images/img6.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">TITOLO</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="carouselExampleSlidesOnly" class="caro_index carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card_index card" style="width: 30rem;">
+                  <img src="images/img7.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">TITOLO</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card_index card" style="width: 30rem;">
+                  <img src="images/img1.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">TITOLO</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card_index card" style="width: 30rem;">
+                  <img src="images/img2.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">TITOLO</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
     </section>
+    <section class="history" id="history">
+      <h2 class="h_title"><span class="title_brod">Storia</span> <span>007</span></h2>
 
+      <div class="h_content" >
+        <h3 class="slide_text">Agente segreto</h3>
+        <img class="img_1" src="images/james-bond2.png">
+        <p class="slide_text">James Bond è un personaggio immaginario creato nel 1953 dallo scrittore britannico <span>Ian Fleming</span>,
+          poi reso universalmente famoso dai film ispirati ai libri dei quali è protagonista (dodici romanzi e due raccolte di storie):
+          colto e raffinato agente segreto del controspionaggio inglese, già comandante della Marina Militare, Bond ha come 
+          numero identificativo <span>007</span>, dove il doppio zero indica che ha "licenza di uccidere".
+          In origine questa spia britannica si sarebbe dovuta chiamare James Secretan, poi Fleming, che cercava un nome semplice, 
+          fu colpito da quello dell'autore di un libro di ornitologia che aveva fra le mani: James Bond appunto.
+          I film "ufficiali" con le avventure di James Bond sono prodotti dalla EON Productions Ltd. sotto la supervisione prima di Harry 
+          Saltzman e Albert Broccoli, poi dei figli di quest'ultimo, Barbara Broccoli e Michael G. Wilson: sono caratterizzati da un tema musicale 
+          memorabile (di Monty Norman), canzoni a tema (di John Barry i primi dodici). I film hanno colpito subito gli spettatori per gli scenari esotici 
+          dove il protagonista agisce spostandosi 
+          da un continente all'altro, le sue sfide estreme con il nemico di turno, le auto fantasiosamente accessoriate per difendersi e attaccare, 
+          le armi e i gadget da missione che gli fornisce Q, nonché le donne sempre bellissime che seduce, e che per questo sono chiamate <span>Bond girl</span> 
+          dalla critica e dal pubblico.</p>
+      </div>
+      <br>
+      <h2 class="h_title"><span class="title_brod">Biografia</span> <span>007</span></h2>
+      <div class="h_content">
+        <h3 class="slide_text">&laquo;Mi chiamo Bond... James Bond&raquo;</h3>
+        <img class="img_2" src="images/james-bond-secret.png">
+        <p class="slide_text">James Bond nasce da genitori borghesi, Andrew Bond di Glencoe, scozzese, e Monique Delacroix, franco-svizzera del cantone di Vaud. Il padre è 
+          rappresentante all'estero della ditta Vickers e pertanto la prima educazione di Bond si svolge all'estero. Bond ha undici anni quando i suoi genitori 
+          rimangono uccisi in un incidente alpinistico a Chamonix. All'età di diciassette anni, si dichiara più vecchio di due anni ed entra in quello che sarebbe poi divenuto il Ministero 
+          della difesa. Gli viene accordato il grado di <span>tenente di vascello</span> del Servizio Speciale del Royal Naval.
+          Reserve e termina la guerra con il grado di capitano di fregata in virtù dei suoi servizi soddisfacenti. Classificato prima con il numero <span>7777</span> e poi come 
+          007, lavora a Hong Kong e in Giamaica prima della missione al Casino Royale. Qui Bond vince la partita contro l'agente sovietico Le Chiffre, ma le 
+          esperienze che seguono sono così drammatiche che inducono Bond a dubitare delle proprie certezze.
+          Si scopre che era stato sottoposto a lavaggio del cervello dai sovietici. <span>M</span>, che si fida di 
+          lui, lotta per rimetterlo in forma e lo spedisce a uccidere "l'uomo dalla pistola d'oro". Bond torna totalmente ristabilito. Dopo varie missioni l'agente 
+          svizzero "Flicka" Von Grusse, una donna che non dimenticherà, e dopo aver per breve tempo assunto il comando di una <span>sezione speciale del SIS</span>. Nel mondo reale sarebbe un florido settantenne che affronta nuove missioni e nuovi nemici come l'Unione di Le 
+          Gérant, l'erede della Spectre, che arriva perfino a farlo dubitare della sua stessa innocenza, e nuovi alleati come Barbara Mawdsley, <span>la nuova M</span>, che 
+          diventerà per lui figura guida come era stato l'ammiraglio Messervy</p>
+      </div>
+      
+    </section>
 
-    <script src="js/script.js"></script>
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2023 by "Gruppo di lavoro Java" | All Right Reserved.</p>
+      </div>
+        
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
