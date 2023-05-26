@@ -2,7 +2,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     
     <head>
         <meta charset="UTF-8">
@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>007</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="indexBOND.css" rel="stylesheet">
+        <link href="CSS/indexBOND.css" rel="stylesheet">
     </head>
 
 <body>
@@ -51,7 +51,7 @@
             </div>
         </div>
 
-        <div class="row" id="libriSection">
+        <div class="row" id="libriSection" th:style="${l}?'display: block;':'display: none;'">
             <div class="text-animate">
                 <h3 class="h3">Libri</h3>
             </div>
@@ -64,7 +64,7 @@
                         <img th:src="${libro.immagine}" class="cardCATALOGO-img-top" alt="Immagine libro">
                         <div class="cardCATALOGO-body">
                             <h5 class="cardCATALOGO-title" th:text="${libro.titolo}"></h5>
-                            <p class="cardCATALOGO-text"><strong class="strong">Anno:</strong> <span th:text="${libro.anno}"></span></p>
+                            <p class="cardCATALOGO-text"><strong class="strong">Anno:</strong> <span th:text="${libro.annoDiPubblicazione}"></span></p>
                             <p class="cardCATALOGO-text"><strong class="strong">Editore:</strong> <span th:text="${libro.editore}"></span></p>
                             <p class="cardCATALOGO-text"><strong class="strong">ISBN:</strong> <span th:text="${libro.isbn}"></span></p>
                             <div class="btn-box">
@@ -78,7 +78,7 @@
 
         
         
-        <div class="row" id="filmSection" style="display: none;">
+        <div class="row" id="filmSection" th:style="${f}?'display: block;':'display: none;'">
             <div class="text-animate">
                 <h3 class="h3">Film</h3>
             </div>
@@ -86,12 +86,11 @@
                 <!-- "${film.immagine}" -->
                 <div th:each="film : ${film}" class="cardCATALOGO-section col-md-3 bordino">
                     <div class="cardCATALOGO">
-                        <img th:src= "${film.immagine}" class="cardCATALOGO-img-top" alt="Immagine film">
+                        <img th:src="${film.immagine}" class="cardCATALOGO-img-top" alt="Immagine film">
                         <div class="cardCATALOGO-body">
                             <h5 class="cardCATALOGO-title" th:text="${film.titolo}">titolo</h5>
-                            <p class="cardCATALOGO-text"><strong class="strong">titolo:</strong> <span th:text="${film.anno}"></span></p>
+                            <p class="cardCATALOGO-text"><strong class="strong">titolo:</strong> <span th:text="${film.annoDiPubblicazione}"></span></p>
                             <p class="cardCATALOGO-text"><strong class="strong">Regista:</strong> <span th:text="${film.regista}"></span></p>
-                            <p class="cardCATALOGO-text"><strong class="strong">Genere:</strong> <span th:text="${film.genere}"></span></p>
                             <div class="btn-box">
                                 <button class="btn btn-primary btn-dettaglio" id="dettaglioButton">Dettaglio</button>
                                 </div>
