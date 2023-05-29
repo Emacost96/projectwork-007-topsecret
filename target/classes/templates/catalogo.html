@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
     
@@ -68,7 +65,7 @@
                             <p class="cardCATALOGO-text"><strong class="strong">Editore:</strong> <span th:text="${libro.editore}"></span></p>
                             <p class="cardCATALOGO-text"><strong class="strong">ISBN:</strong> <span th:text="${libro.isbn}"></span></p>
                             <div class="btn-box">
-                            <button class="btn btn-primary btn-dettaglio" id="dettaglioButton">Dettaglio</button>
+                            <a th:href="@{dettaglio(id=${libro.id})}"><button class="btn btn-primary btn-dettaglio" id="dettaglioButton">Dettaglio</button></a>
                             </div>
                         </div>
                     </div>
@@ -92,7 +89,7 @@
                             <p class="cardCATALOGO-text"><strong class="strong">titolo:</strong> <span th:text="${film.annoDiPubblicazione}"></span></p>
                             <p class="cardCATALOGO-text"><strong class="strong">Regista:</strong> <span th:text="${film.regista}"></span></p>
                             <div class="btn-box">
-                                <button class="btn btn-primary btn-dettaglio" id="dettaglioButton">Dettaglio</button>
+                                <a th:href="@{dettaglio(id=${film.id})}"><button class="btn btn-primary btn-dettaglio" id="dettaglioButton">Dettaglio</button></a>
                                 </div>
                             </div>
                     </div>

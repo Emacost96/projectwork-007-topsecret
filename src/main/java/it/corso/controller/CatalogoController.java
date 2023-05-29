@@ -13,7 +13,7 @@ import it.corso.model.Opera;
 import it.corso.service.OperaService;
 
 @Controller
-@RequestMapping("/catalogo")
+@RequestMapping("/catalogo2")
 public class CatalogoController {
 	
 	@Autowired
@@ -23,7 +23,8 @@ public class CatalogoController {
 	public String getPage(
 			Model model,
 			@RequestParam(name = "film", required = false) String f,
-			@RequestParam(name = "libri", required = false) String l) 
+			@RequestParam(name = "libri", required = false) String l,
+			@RequestParam(name = "catalogo", required = false) String c) 
 	{
 		List<Opera> libri = operaService.getLibri();
 		model.addAttribute("libri", libri);
@@ -31,6 +32,7 @@ public class CatalogoController {
 		model.addAttribute("film", film);
 		model.addAttribute("f", f!=null);
 		model.addAttribute("l", l!=null);
-		return "catalogo";
+		model.addAttribute("c", c!=null);
+		return "catalogo2";
 	}
 }

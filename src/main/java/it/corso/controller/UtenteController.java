@@ -31,7 +31,7 @@ public class UtenteController {
 			return "redirect:/reserved"; // dove portiamo l'utente dopo avere loggato
 		Utente utente = new Utente();
 		model.addAttribute("utente", utente);
-		return "login";
+		return "registrazione";
 	}
 	
 	@PostMapping
@@ -41,7 +41,7 @@ public class UtenteController {
 		HttpSession session)
 	{
 		if (adminService.checkAdminLogin(session, username, password))
-			return "redirect:/admin";
+			return "redirect:/dashboard";
 		
 		
 		else if(utenteService.controlloLogin(session, username, password))

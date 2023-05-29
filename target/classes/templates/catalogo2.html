@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>007</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <link href="/CSS/catalogo2.css" rel="stylesheet">
+        <script defer src="/JS/catalogo2.js"></script>
+    </head>
+
+<body>
+   
+    <!-- header design -->
+    <header class="header">
+        <a th:href="@{/}" class="logo hiddeny"><img src="/images/icon007.png" class="icon-logo hiddeny">James Bond</a>
+        <!--icona del menu che appare in modalità responsive-->
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <nav class="navbar">
+            <a th:href="@{/}" class="active hiddeny">Home</a>
+            <a th:href="@{catalogo2}" class="hiddeny">Opere</a>
+            <a th:href="@{catalogo2('catalogo')}" class="hiddeny">Catalogo</a>
+            <!--<a href="">Parliamone</a>-->
+            <a th:href="@{registrazione}" class="hiddeny">Login</a>
+
+            <span class="active-nav"></span>
+        </nav>
+       
+    </header>
+
+    <!-- Hero -->
+    <div id="caroselloz" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="false">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carosellocatalogo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carosellocatalogo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carosellocatalogo" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <div class="catalogoimg img1 hiddenz"></div>
+            <div class="containercatalogo hiddenz">
+                <div class="row rowcatalogo">
+                <div class="col-lg-6">
+                    <div class="opera">
+                    <h2 class="titolo-opera">Skyfall</h2>
+                    <p class="trama-opera">James Bond è a Istanbul per recuperare un file contenente le identità degli agenti NATO infiltrati nelle maggiori organizzazioni terroristiche e criminali mondiali. Nonostante gli sforzi di Bond (sforzi che comprendono un inseguimento in moto sui tetti del bazar della città e una lotta corpo a corpo in cima ad un treno in corsa), il file viene rubato dal sicario Patrice. Questi, alla fine, riesce a fuggire mentre Bond viene colpito per sbaglio dalla sua collega sul campo e precipita in un fiume.</p>
+                    <button class="btn mt-5 noleggiabtn">Noleggia</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 ml-5">
+                    <img src="/images/catalogo/skyfall_catalogo_2.png" class="img-fluid shadowimgcatalogo">
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="carousel-item">
+            <div class="catalogoimg img2"></div>
+            <div class="containercatalogo">
+                <div class="row rowcatalogo">
+                <div class="col-lg-6">
+                    <div class="opera">
+                    <h2 class="titolo-opera">Spectre</h2>
+                    <p class="trama-opera">Seguendo un messaggio postumo della precedente M, James Bond è a Città del Messico per uccidere Marco Sciarra, membro di un'ignota organizzazione criminale che sta pianificando un attentato. Prima di uccidere l'uomo, Bond gli prende l'anello che indossa.</p>
+                    <button class="btn mt-5 noleggiabtn">Noleggia</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 ml-5">
+                    <img src="/images/catalogo/spectre_catalogo_2.png" class="img-fluid shadowimgcatalogo">
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="carousel-item">
+            <div class="catalogoimg img3"></div>
+            <div class="containercatalogo">
+                <div class="row rowcatalogo">
+                <div class="col-lg-6">
+                    <div class="opera">
+                    <h2 class="titolo-opera">Casino Royale</h2>
+                    <p class="trama-opera">La spia britannica James Bond si guadagna la licenza di doppio 0 uccidendo a sangue freddo due traditori dell'MI6 di stanza a Praga. Inviato in missione in Madagascar, il neopromosso 007 insegue ed elimina un mercenario assoldato per compiere un attentato; l'assassinio viene però ripreso dalle telecamere all'interno di un'ambasciata, generando un caos mediatico che comporta la sua momentanea sospensione.</p>
+                    <button class="btn mt-5 noleggiabtn">Noleggia</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 ml-5">
+                    <img src="/images/catalogo/casino_royale_catalogo.png" class="img-fluid shadowimgcatalogo">
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    
+
+    <!-- Card -->
+
+    <div class="row pt-5">
+        <div class="col d-flex justify-content-center">
+            <div class="btn-box btn-group" role="group" aria-label="Button group">
+                <a th:href="@{catalogo2(libri)}"><button class="btn tab-label active hiddenz" id="libriButton">Libri</button></a>
+                <a th:href="@{catalogo2(film)}"><button class="btn tab-label hiddenz" id="filmButton">Film</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5" th:style="${l}OR${c}?'display: block;':'display: none;'">
+        <div class="text-animate" >
+            <h3 class="h3 hiddenz" id="libriSectionText">Libri</h3>
+        </div>
+        <div class="row" id="libriSection">
+          <div class="col-md-3 hiddenxlibro" th:each="libro : ${libri}">
+            <div class="cutter">
+              <div class="card operacard">
+                <img th:src="@{${libro.immagine}}" class="card-img">
+                <div class="card-img-overlay">
+                  <a th:href="@{dettaglio(id=${libro.id})}"><button class="btn btn-primary cardbtn">Dettaglio</button></a>
+                </div>
+              </div>
+              <h5 class="card-title" th:text="${libro.titolo}">Il Dottor No</h5>
+              <p class="card-data" th:text="${libro.annoDiPubblicazione}">1958</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container mt-5" th:style="${f}OR${c}?'display: block;':'display: none;'">
+        <div class="text-animate" >
+            <h3 class="h3 hiddenz" id="filmSectionText">Film</h3>
+        </div>
+        <div class="row" id="filmSection">
+          <div class="col-md-3 hiddenxfilm" th:each="movie : ${film}">
+            <div class="cutter">
+              <div class="card operacard">
+                <img th:src="@{${movie.immagine}}" class="card-img">
+                <div class="card-img-overlay">
+                  <a th:href="@{dettaglio(id=${movie.id})}"><button class="btn btn-primary cardbtn">Dettaglio</button></a>
+                </div>
+              </div>
+              <h5 class="card-title" th:text="${movie.titolo}">2008</h5>
+              <p class="card-data" th:text="${movie.annoDiPubblicazione}">1999</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+
+<!-- JavaScript--> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    
+    <script>
+        // Codice JavaScript per il toggle tra sezioni "Libri" e "Film"
+        document.getElementById('libriButton').addEventListener('click', function() {
+            document.getElementById('libriSection').style.display = 'flex';
+            document.getElementById('filmSection').style.display = 'none';
+            document.getElementById('libriButton').classList.add('active');
+            document.getElementById('filmButton').classList.remove('active');
+            document.getElementById('libriSectionText').style.display = 'block';
+            document.getElementById('filmSectionText').style.display = 'none';
+        });
+        document.getElementById('filmButton').addEventListener('click', function() {
+            document.getElementById('libriSection').style.display = 'none';
+            document.getElementById('filmSection').style.display = 'flex';
+            document.getElementById('libriButton').classList.remove('active');
+            document.getElementById('filmButton').classList.add('active');
+            document.getElementById('libriSectionText').style.display = 'none';
+            document.getElementById('filmSectionText').style.display = 'block';
+        });
+        document.getElementById('menu-icon').addEventListener('click', function() {
+            document.querySelector('.navbar').classList.toggle('active');
+            document.getElementById('menu-icon').classList.toggle('bx-x');
+        });
+
+        var cards = document.getElementsByClassName('cardCATALOGO');
+
+        for (var i = 0; i < cards.length; i++) {
+        cards[i].addEventListener('mouseover', function() {
+            var dettaglioButton = this.querySelector('.btn-dettaglio');
+            dettaglioButton.style.display = 'inline-block';
+        });
+
+  
+        cards[i].addEventListener('mouseleave', function() {
+            
+            var dettaglioButton = this.querySelector('.btn-dettaglio');
+        
+            dettaglioButton.style.display = 'none';
+        });
+        }
+
+    </script>
+</body>
+</html>

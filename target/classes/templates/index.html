@@ -24,7 +24,7 @@
         <nav class="navbar slide_text">
             <a href="#home" class="active">Home</a>
             <a href="#history">Storia</a>
-            <a th:href="@{catalogo}">Catalogo</a>
+            <a th:href="@{catalogo2('catalogo')}">Catalogo</a>
         <!--<a href="">Parliamone</a>-->
             <a th:href="@{registrazione}">Login</a>
 
@@ -50,15 +50,15 @@
               Non esito a mettere a rischio la mia vita per il bene comune.</p>
             <br>
             <div class="btn-box">
-                <a th:href="@{catalogo(film)}" class="btn">Film</a>
-                <a th:href="@{catalogo(libri)}" class="btn">Libri</a>
+                <a th:href="@{catalogo2(film)}" class="btn">Film</a>
+                <a th:href="@{catalogo2(libri)}" class="btn">Libri</a>
             </div>
         </div>
 
         <div class="home-sci">
-            <a href="#"><i class='bx bxl-facebook' ></i></a>
-            <a href="#"><i class='bx bxl-twitter' ></i></a>
-            <a href="#"><i class='bx bxl-instagram' ></i></a>
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
         </div>
         <!--immagine home in hover-->
         <div class="home-imgHover">

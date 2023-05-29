@@ -15,7 +15,7 @@ import it.corso.service.OperaService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/dashboard")
 public class AdminController {
 	
 	@Autowired
@@ -27,7 +27,7 @@ public class AdminController {
 			return "redirect:/utente";
 		List<Opera> opere =  operaService.getOpere();
 		model.addAttribute("opere", opere);
-		return "admin";
+		return "dashboard";
 	}
 	
 	@GetMapping("/ripristina")

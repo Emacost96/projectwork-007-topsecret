@@ -23,6 +23,8 @@ public class DettaglioController {
 			@RequestParam("id") int id) {
 		Opera opera = dettaglioService.findOperaById(id);
 		model.addAttribute("opera", opera);
+		if(opera.getCast() != null) 
+			model.addAttribute("cast", opera.getCast().split(","));
 		return "dettaglio";
 	}
 }

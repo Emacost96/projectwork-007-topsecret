@@ -38,15 +38,15 @@
     <section class="sezione1">
         <div class="container">
             <div class="poster">
-                <img th:src="@{opera.immagine}" alt="">
+                <img th:src="@{${opera.immagine}}" alt="">
             </div>
             <div class="info">
                 <div class="movie-title" th:text="'Titolo film: ' + ${opera.titolo}"> Titolo film</div>
 
                 <div class="movie-detail">
                     <div class="set">
-                        <label>Data rilascio</label>
-                        <span>3 Marzo 2021</span>
+                        <label>Anno di pubblicazione</label>
+                        <span th:text="${opera.annoDiPubblicazione}">3 Marzo 2021</span>
                     </div>
                     <!-- <div class="set">
                         <label>Durata</label>
@@ -54,20 +54,23 @@
                     </div> -->
                     <div class="set">
                         <label>Genere</label>
-                        <span>Avventura</span>
+                        <span>Spionaggio</span>
                     </div>
                 </div>
                 <div class="movie-description" th:text="${opera.trama}">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium facilis
                     consequuntur sint sed quos ut voluptatibus nulla cum minima itaque perferendis saepe accusamus pariatur,
                     recusandae, in consequatur. Necessitatibus, tempora nesciunt?</div>
-                <div class="movie-cast">
-                    <div class="titolo">Cast</div>
+                <div class="movie-cast" th:if="${opera.regista != null} OR ${opera.cast != null}">
                     <div class="list">
-                        <div class="cast">
-                            <p>regista</p>
+                        <div class="cast" >
+                            <p class="titolo">Regista</p>
+                            <p th:text="${opera.regista}"></p>
                         </div>
                         <div class="cast">
-                            <p>attori1, attori2, attori3</p>
+                        	<p class="titolo">Cast</p>
+                        	<ul>
+                        		<li th:each="c : ${cast}" th:text="${c}" style="list-style: none;"></li>
+                        	</ul>
                         </div>
                     </div>
 

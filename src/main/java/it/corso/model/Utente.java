@@ -39,7 +39,7 @@ public class Utente {
 	private String username;
 	
 	@Column(name = "password")
-	@Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,20}", message = "Password troppo debole")
+	@Pattern(regexp = "(?=.*\\\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{4,20}", message = "Password troppo debole")
 	private String password;
 	
 	@OneToMany(mappedBy = "utente", cascade = CascadeType.REFRESH, fetch = FetchType.EAGER, orphanRemoval = true)
