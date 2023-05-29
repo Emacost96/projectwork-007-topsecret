@@ -33,7 +33,7 @@
                 </a>
             </div>
             <div class="sidebar">
-                <a href="dashboardClientiAdmin.html">
+                <a th:href="@{dashboard/clienti}">
                     <i class='bx bx-user'></i>
                     <h3>Clienti</h3>
                 </a>
@@ -123,17 +123,20 @@
                             <th>Tipologia</th>
                             <th>ISBN</th>
                             <th>Disponibilità</th>
-                            <th>Pagamento</th>
+                            <th>Regista/Autore</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody> <!-- tag per incapsulare tabelle -->
                         <tr th:each="o : ${opere}">
                             <td th:text="${o.titolo}">Titolo</td>
-                            <td th:text="${o.isbn != null} ? ${o.isbn} : ' - '">Numero prodotto (ISBN)</td>
-                            <td th:text="${o.prenotato == 0} ? 'Disponibile' : 'Prenotato'">Disponibile / Prenotato</td>
-                            <td class="warning"> In attesa / pagato</td>
-                            <td class="primary">Elimina</td>
+                            <td th:text="${o.tipologia == 'F'} ? 'Film' : 'Libro'">Tipologia</td>
+                            <td th:text="${o.isbn != null} ? ${o.isbn} : ' - '"></td>
+                            <td th:text="${o.prenotato == false} ? 'Disponibile' : 'Prenotato'" th:class="${o.prenotato == false} ? success : warning ">Numero prodotto (ISBN)</td>
+                            <td th:text="${o.tipologia == 'F'} ? ${o.regista} : 'Ian Fleming'"></td>
+                            <td><a th:href="@{dashboard/elimina(id=${o.id})}">Elimina</a></td>
+                            <td class="warning"><a th:if="${o.prenotato == true}" th:href="@{dashboard/ripristina(id=${o.id})}" >Ripristina</a></td>
+                            
                         </tr>
                     </tbody>
                 </table>

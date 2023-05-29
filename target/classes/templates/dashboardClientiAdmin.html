@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="/CSS/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Dashboard Admin</title>
 </head>
@@ -17,7 +17,7 @@
         <aside>
             <div class="top">
                 <div class="logo">
-                    <img src="images/icon007.png">
+                    <img src="/images/icon007.png">
                     <h2>007</h2>
                 </div>
                 <div class="close" id="close-btn">
@@ -27,13 +27,13 @@
 
 
             <div class="sidebar">
-                <a href="dashboard.html" >
+                <a th:href="@{dashboard}" >
                     <i class='bx bxs-grid-alt'></i>
                     <h3>Dashboard</h3>
                 </a>
             </div>
             <div class="sidebar">
-                <a href="dashboardClientiAdmin.html"  class="active">
+                <a href="#"  class="active">
                     <i class='bx bx-user' ></i>
                     <h3>Clienti</h3>
                 </a>
@@ -77,7 +77,6 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Id</th>
                             <th>Nome</th>
                             <th>Email</th>
                             <th>Username</th>
@@ -85,18 +84,10 @@
                         </tr>
                     </thead>
                     <tbody> <!-- tag per incapsulare tabelle -->
-                        <tr>
-                            <td>1</td>
-                            <td>Mario Rossi</td>
-                            <td>mario.rossi@gmail.com</td>
-                            <td>marrss</td>
-                            <td class="primary">Elimina</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Giuseppe verdi</td>
-                            <td>giuseppe.verdi@gmail.com</td>
-                            <td>giuver</td>
+                        <tr th:each="u : ${utenti}">
+                            <td th:text="${u.nome}">Mario Rossi</td>
+                            <td th:text="${u.cognome}">mario.rossi@gmail.com</td>
+                            <td th:text="${u.username}">marrss</td>
                             <td class="primary">Elimina</td>
                         </tr>
                     </tbody>

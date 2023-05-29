@@ -43,6 +43,13 @@ public class AdminController {
 		return "dashboardAdmin";
 	}
 	
+	@GetMapping("/clienti")
+	public String getPageClienti(Model model) {
+	    List<Utente> utenti = utenteService.getUtenti();
+	    model.addAttribute("utenti", utenti);
+	    return "dashboardClientiAdmin";
+	}
+
 	@GetMapping("/ripristina")
     public String ripristinaDisponibilità(@RequestParam("id") int id) {
 
@@ -50,7 +57,7 @@ public class AdminController {
 	opera.setPrenotato(false);
 	operaService.registraOpera(opera);
 
-	return "redirect:/dashboardAdmin";
+	return "redirect:/dashboard";
     }
 	
 	@PostMapping
@@ -59,5 +66,11 @@ public class AdminController {
 		if (session.getAttribute("admin") == null)
 			return "redirect:/utente";
 		    return "redirect:/dashboardAdmin";
+	}
+
+	@GetMapping("elimina")
+	public String eliminaOpera(@RequestParam("id") int id) {
+	    operaService.eliminaOpera(operaService.findOperaById(id));
+	    return "redirect:/dashboard";
 	}
 }

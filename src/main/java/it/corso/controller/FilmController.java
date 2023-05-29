@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import it.corso.model.Opera;
 import it.corso.service.OperaService;
@@ -15,7 +14,7 @@ import it.corso.service.OperaService;
 
 //questo genera la lista delle opere
 @Controller
-@RequestMapping("catalogo/film")
+@RequestMapping("/film")
 public class FilmController {
 
 	@Autowired
@@ -30,10 +29,5 @@ public class FilmController {
 	}
 	
 	
-	@GetMapping("elimina")
-	public String eliminaOpera(
-			@RequestParam("id") int id) {
-		operaService.eliminaOpera(operaService.findOperaById(id));
-		return "redirect:/=film";
-	}
+
 }
