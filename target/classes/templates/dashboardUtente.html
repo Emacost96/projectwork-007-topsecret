@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Dashboard Utente</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- --------- SIDEBAR ------------- -->
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="images/icon007.png">
+                    <h2>007</h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <i class='bx bx-x'>close</i>
+                </div>
+            </div>
+
+
+            <div class="sidebar">
+                <a href="dashboardUtenteProfilo.html"   class="active">
+                    <i class='bx bx-user'></i>
+                    <h3>Profilo</h3>
+                </a>
+            </div>
+            
+            <div class="sidebar">
+                <a href="#">
+                    <i class='bx bx-exit'></i>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+
+        </aside>
+        <!-- --------FINE SIDEBAR---------- -->
+        <main>
+            <h1>Dashboard</h1>
+
+            <div class="date">
+                <input type="date">
+            </div>
+
+
+            <div class="recent-orders">
+                <h2>Ordini Recenti</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Prodotto</th>
+                            <th>Codice Prodotto</th>
+                            <th>Disponibilità</th>
+                            <th>Pagamento</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody> <!-- tag per incapsulare tabelle -->
+                        <tr>
+                            <td>Prodotto 1</td>
+                            <td>Numero prodotto (ISBN)</td>
+                            <td>Disponibile / Prenotato</td>
+                            <td class="warning"> In attesa / pagato</td>
+                            <td class="primary">Dettagli</td>
+                        </tr>
+                        <tr>
+                            <td>Prodotto 2</td>
+                            <td>Numero prodotto (ISBN)</td>
+                            <td>Disponibile / Prenotato</td>
+                            <td class="warning"> In attesa / pagato</td>
+                            <td class="primary">Dettagli</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </main>
+        <!-- ------------ FINE MAIN ------------------>
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <i class='bx bx-menu'></i>
+                </button>
+                <div class="theme-toggler">
+                    <i class='bx bxs-sun active'></i>
+                    <i class='bx bxs-moon'></i>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Utente 1</b></p>
+                        <small class="text-muted">Utente standard</small><br>
+                        <a href="#"><small class="text-muted" style="color: rgba(255, 217, 0, 0.479);">Passa a premium</small></a>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/au003-aston-martin-db5-spectre-bond.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- ------ FINE TOP ------- -->
+            <div class="recent-updates">
+
+                <h2>I tuoi dati</h2>
+                <div class="dati updates">
+
+                    <p><b>Nome: </b>Mario Rossi</p>
+                    <p><b>Mail: </b>mario.rossi@gmail.com</p>
+                    <p><b>Username: </b>marros</p>
+                </div>
+
+                <h2>Aggiornamenti recenti</h2>
+                <div class="updates">
+
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="images/au003-aston-martin-db5-spectre-bond.jpg">
+                        </div>
+                        <div class="message">
+                            <div class="message">
+                                <p><b>Utente 1</b> hai aggiunto articolo1 ai preferiti</p>
+                                <small class="text-muted">2 minuti fa</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="images/au003-aston-martin-db5-spectre-bond.jpg">
+                        </div>
+                        <div class="message">
+                            <div class="message">
+                                <p><b>Utente 1</b> hai aggiunto articolo2 al carrello</p>
+                                <small class="text-muted">2 minuti fa</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="images/au003-aston-martin-db5-spectre-bond.jpg">
+                        </div>
+                        <div class="message">
+                            <div class="message">
+                                <p><b>Utente 1</b> il tuo ordine articolo3 è stato spedito</p>
+                                <small class="text-muted">2 minuti fa</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
