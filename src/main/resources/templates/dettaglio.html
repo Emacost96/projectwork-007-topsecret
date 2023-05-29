@@ -20,11 +20,11 @@
 <body>
     <!-- header-->
     <header class="header slide_text">
-        <a th:href="@{index}" class="logo"><img src="images/icon007.png" class="icon-logo"><h2>James Bond</h2></a>
+        <a th:href="@{/}" class="logo"><img src="images/icon007.png" class="icon-logo"><h2>James Bond</h2></a>
 
         <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#history">Storia</a>
+            <a th:href="@{/}" class="active">Home</a>
+            <a th:href="@{/#history}">Storia</a>
             <a th:href="@{catalogo}">Catalogo</a>
         <!--<a href="">Parliamone</a>-->
             <a th:href="@{registrazione}">Login</a>

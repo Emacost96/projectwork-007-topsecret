@@ -27,7 +27,7 @@ public class AdminController {
 			return "redirect:/utente";
 		List<Opera> opere =  operaService.getOpere();
 		model.addAttribute("opere", opere);
-		return "dashboard";
+		return "dashboardAdmin";
 	}
 	
 	@GetMapping("/ripristina")
@@ -37,7 +37,7 @@ public class AdminController {
 	opera.setPrenotato(false);
 	operaService.registraOpera(opera);
 
-	return "redirect:/admin";
+	return "redirect:/dashboardAdmin";
     }
 	
 	@PostMapping
@@ -45,6 +45,6 @@ public class AdminController {
 	{
 		if (session.getAttribute("admin") == null)
 			return "redirect:/utente";
-		return "riderect:/admin";
+		    return "redirect:/dashboardAdmin";
 	}
 }
