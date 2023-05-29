@@ -43,35 +43,35 @@
                 <img th:src="@{${opera.immagine}}" alt="">
             </div>
             <div class="info">
-                <div class="movie-title" th:text="'Titolo film: ' + ${opera.titolo}"> Titolo film</div>
+                <div class="movie-title" th:text="'Titolo: ' + ${opera.titolo}"> Titolo</div>
 
                 <div class="movie-detail">
                     <div class="set">
                         <label>Anno di pubblicazione</label>
-                        <span th:text="${opera.annoDiPubblicazione}">3 Marzo 2021</span>
+                        <span class="big_text" th:text="${opera.annoDiPubblicazione}">3 Marzo 2021</span>
                     </div>
                     <!-- <div class="set">
                         <label>Durata</label>
-                        <span>1 Hr 47 Min</span>
+                        <span class="big_text">1 Hr 47 Min</span>
                     </div> -->
                     <div class="set">
                         <label>Genere</label>
-                        <span>Spionaggio</span>
+                        <span class="big_text">Spionaggio</span>
                     </div>
                 </div>
-                <div class="movie-description" th:text="${opera.trama}">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium facilis
+                <div class="movie-description big_text" th:text="${opera.trama}">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium facilis
                     consequuntur sint sed quos ut voluptatibus nulla cum minima itaque perferendis saepe accusamus pariatur,
                     recusandae, in consequatur. Necessitatibus, tempora nesciunt?</div>
                 <div class="movie-cast" th:if="${opera.regista != null} OR ${opera.cast != null}">
                     <div class="list">
                         <div class="cast" >
                             <p class="titolo">Regista</p>
-                            <p th:text="${opera.regista}"></p>
+                            <p class="big_text" th:text="${opera.regista}"></p>
                         </div>
                         <div class="cast">
                         	<p class="titolo">Cast</p>
                         	<ul>
-                        		<li th:each="c : ${cast}" th:text="${c}" style="list-style: none;"></li>
+                        		<li class="big_text" th:each="c : ${cast}" th:text="${c}" style="list-style: none;"></li>
                         	</ul>
                         </div>
                     </div>
