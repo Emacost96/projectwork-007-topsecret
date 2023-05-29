@@ -17,7 +17,7 @@
         <aside>
             <div class="top">
                 <div class="logo">
-                    <img src="images/icon007.png">
+                    <img src="/images/icon007.png">
                     <h2>007</h2>
                 </div>
                 <div class="close" id="close-btn">
@@ -66,7 +66,7 @@
         </aside>
         <!-- --------FINE SIDEBAR---------- -->
         <main>
-            <h1>Dashboard</h1>
+            <h1>Dashboard Amministratore</h1>
 
             <div class="date">
                 <input type="date">
@@ -128,17 +128,10 @@
                         </tr>
                     </thead>
                     <tbody> <!-- tag per incapsulare tabelle -->
-                        <tr>
-                            <td>Prodotto 1</td>
-                            <td>Numero prodotto (ISBN)</td>
-                            <td>Disponibile / Prenotato</td>
-                            <td class="warning"> In attesa / pagato</td>
-                            <td class="primary">Elimina</td>
-                        </tr>
-                        <tr>
-                            <td>Prodotto 2</td>
-                            <td>Numero prodotto (ISBN)</td>
-                            <td>Disponibile / Prenotato</td>
+                        <tr th:each="o : ${opere}">
+                            <td th:text="${o.titolo}">Titolo</td>
+                            <td th:text="${o.isbn != null} ? ${o.isbn} : ' - '">Numero prodotto (ISBN)</td>
+                            <td th:text="${o.prenotato == 0} ? 'Disponibile' : 'Prenotato'">Disponibile / Prenotato</td>
                             <td class="warning"> In attesa / pagato</td>
                             <td class="primary">Elimina</td>
                         </tr>
