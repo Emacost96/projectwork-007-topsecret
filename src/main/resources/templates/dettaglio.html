@@ -5,22 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/dettaglio.css">
+    <link rel="stylesheet" href="/static/CSS/dettaglio.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Quicksand&display=swap"
         rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!--favicon-->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico">
     
     <title>Dettaglio</title>
 </head>
 
 <body>
+
+    <div class = "popup btn-box" id="popup">
+        <div class="contenuto-popup">
+        <h3>Vuoi noleggiare il seguente articolo: </h3>
+        <p>Titolo Film</p> 
+        <img src="/static/images/17-golden-eye.jpg">
+        <div class="buttons">
+            <button class="danger" id="btn-annulla">Annulla</button>
+            <button class="success">Conferma</button>
+        </div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
     <!-- header-->
     <header class="header slide_text">
-        <a th:href="@{/}" class="logo"><img src="images/icon007.png" class="icon-logo"><h2>James Bond</h2></a>
+        <a th:href="@{/}" class="logo"><img src="/static/images/icon007.png" class="icon-logo"><h2>James Bond</h2></a>
 
         <nav class="navbar">
             <a th:href="@{/}" class="active">Home</a>
@@ -75,7 +88,7 @@
                         </div>
                         <div class="cast">
                         	<div class="btn-box">
-                    			<a th:class="${opera.prenotato == true} ? danger : success" th:text="${opera.prenotato == true} ? 'Non disponibile' : 'Noleggia'" th:href="@{catalogo2(film)}" class="btn">Noleggia</a>
+                    			<a th:class="${opera.prenotato == true} ? danger : success" th:text="${opera.prenotato == true} ? 'Non disponibile' : 'Noleggia'" th:href="@{catalogo2(film)}" class="btn" id="btn-noleggia">Noleggia</a>
                 			</div>
                         </div>
                     </div>
@@ -94,19 +107,20 @@
         <div class="wrapper">
             <i id="left" class='bx bx-chevrons-left'></i>
             <div class="carousel">
-                <img src="/images/img1.jpg">
-                <img src="/images/img2.jpg">
-                <img src="/images/img3.jpg">
-                <img src="/images/img4.jpg">
-                <img src="/images/img5.jpg">
-                <img src="/images/img6.jpg">
-                <img src="/images/img7.jpg">
+                <img src="/static/images/img1.jpg">
+                <img src="/static/images/img2.jpg">
+                <img src="/static/images/img3.jpg">
+                <img src="/static/images/img4.jpg">
+                <img src="/static/images/img5.jpg">
+                <img src="/static/images/img6.jpg">
+                <img src="/static/images/img7.jpg">
             </div>
             <i id="right" class='bx bx-chevrons-right'></i>
         </div>
     </div>
 	
 	<script src="/JS/carosello.js" defer></script>
+    <script src="/static/JS/PopUpDettaglio.js"></script>
 
 </body>
 
