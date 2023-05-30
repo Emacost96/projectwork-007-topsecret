@@ -20,7 +20,7 @@
             <div class="top">
                 <div class="logo">
                     <img src="/images/icon007.png">
-                    <h2>007</h2>
+                    <h2>Secret Agent</h2>
                 </div>
                 <div class="close" id="close-btn">
                     <i class='bx bx-x'>close</i>
@@ -29,7 +29,7 @@
 
 
             <div class="sidebar">
-                <a href="dashboardUtenteProfilo.html"   class="active">
+                <a href="dashboardUtenteProfilo.html" class="active">
                     <i class='bx bx-user'></i>
                     <h3>Profilo</h3>
                 </a>
@@ -104,9 +104,9 @@
                 <h2>I tuoi dati</h2>
                 <div class="dati updates">
 
-                    <p><b>Nome: </b>Mario Rossi</p>
-                    <p><b>Mail: </b>mario.rossi@gmail.com</p>
-                    <p><b>Username: </b>marros</p>
+                    <p><b>Nome: </b><span th:text="${utente.nome} + ' ' + ${utente.cognome}">Mario Rossi</span></p>
+                    <p><b>Mail: </b><span th:text="${utente.email}">mario.rossi@gmail.com</span></p>
+                    <p><b>Username: </b><span th:text="${utente.username}">marros</span></p>
                 </div>
 
                 <h2>Aggiornamenti recenti</h2>
