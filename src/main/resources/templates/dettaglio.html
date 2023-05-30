@@ -95,7 +95,7 @@
 
                 </div>
 				
-                        <div class="cast">
+                        <div class="cast" th:if="${opera.tipologia == 'L'}" >
                         	<div class="btn-box">
                     			<a type="button" th:class="${opera.prenotato == true} ? danger : success" th:disabled="${opera.prenotato == true}" th:text="${opera.prenotato == true} ? 'Non disponibile' : 'Noleggia'" href="#" class="btn" id="btn-noleggia">Noleggia</a>
                 			</div>
