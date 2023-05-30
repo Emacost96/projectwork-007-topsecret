@@ -47,7 +47,7 @@ body {
     /* font-family: poppins, sans-serif; */
     font-family: 'segoe ui', sans-serif;
     font-size: 0.88rem;
-    background: linear-gradient(rgba(5, 5, 5, 0.774), rgba(5, 5, 5, 0.863)), url(images/img1.jpg) no-repeat;
+    background: linear-gradient(rgba(5, 5, 5, 0.774), rgba(5, 5, 5, 0.863)), url(/images/img1.jpg) no-repeat;
     background-size: cover;
     /* background: var(--color-background); */
     user-select: none;

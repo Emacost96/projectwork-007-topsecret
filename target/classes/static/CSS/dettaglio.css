@@ -230,6 +230,46 @@ html {
     transition: .5s;
 }
 
+.success {
+	box-sizing: content-box;
+	position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 100%;
+    background: var(--main-color);
+    border: .2rem solid #198754;
+    border-radius: .8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+	background-color: #198754;
+	text-decoration: none;
+	color: white;
+	padding: 5px;
+}
+
+.danger {
+	box-sizing: content-box;
+	position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 100%;
+    background: var(--main-color);
+    border: .2rem solid #df4759;
+    border-radius: .8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+	background-color: #df4759;
+	text-decoration: none;
+	color: white;
+	padding: 5px;
+}
+
 
 /* carosello immagini */
 

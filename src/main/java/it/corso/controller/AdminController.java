@@ -3,6 +3,8 @@ package it.corso.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.net.ssl.HttpsURLConnection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -98,5 +100,11 @@ public class AdminController {
 	public String eliminaUtente(@RequestParam("id") int id) {
 		utenteService.eliminaUtente(utenteService.findUtentebyId(id));
 		return "redirect:/dashboardAdmin/clienti";
+	}
+	
+	@GetMapping("logout")
+	public String logoutAmministratore(HttpSession session) {
+		session.removeAttribute("admin");
+		return "redirect:/";
 	}
 }

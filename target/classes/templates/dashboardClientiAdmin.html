@@ -57,7 +57,7 @@
                 </a>
             </div>
             <div class="sidebar">
-                <a href="#">
+                <a th:href="@{/dashboardAdmin/logout}">
                     <i class='bx bx-exit'></i>
                     <h3>Logout</h3>
                 </a>
@@ -85,8 +85,8 @@
                     </thead>
                     <tbody> <!-- tag per incapsulare tabelle -->
                         <tr th:each="u : ${utenti}">
-                            <td th:text="${u.nome}">Mario Rossi</td>
-                            <td th:text="${u.cognome}">mario.rossi@gmail.com</td>
+                            <td th:text="${u.nome} + ' ' + ${u.cognome}">Mario Rossi</td>
+                            <td th:text="${u.username}">mario.rossi@gmail.com</td>
                             <td th:text="${u.username}">marrss</td>
                             <td class="primary"><a th:href="@{eliminautente(id=${u.id})}">Elimina</a></td>
                         </tr>

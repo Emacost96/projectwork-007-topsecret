@@ -57,7 +57,7 @@
                 </a>
             </div>
             <div class="sidebar">
-                <a href="#">
+                <a th:href="@{/dashboardAdmin/logout}">
                     <i class='bx bx-exit'></i>
                     <h3>Logout</h3>
                 </a>
@@ -131,30 +131,30 @@
 
                         <div class="corpo-destra">
 
-                            <div class="formbold-input-group">
+                            <div class="formbold-input-group" id="editore">
                                 <label for="name" class="formbold-form-label"> Editore </label>
-                                <input type="text" name="name" id="name" placeholder="Inserisci editore"
+                                <input type="text" name="editore"  placeholder="Inserisci editore"
                                     class="formbold-form-input" th:field="*{editore}"/>
                             </div>
 
-                            <div class="formbold-input-group">
+                            <div class="formbold-input-group" id="regista">
                                 <label for="name" class="formbold-form-label"> Regista </label>
-                                <input type="text" name="name" id="name" placeholder="Inserisci regista"
+                                <input type="text" th:disabled="${opera.tipologia == 'L'}" name="regista"  placeholder="Inserisci regista"
                                     class="formbold-form-input" th:field="*{regista}" />
                             </div>
 
-                            <div>
+                            <div id="cast">
                                 <label for="message" class="formbold-form-label">
                                     Cast
                                 </label>
-                                <textarea rows="2" name="message" id="message"
+                                <textarea rows="2" name="message" 
                                     placeholder="Inserisci qui l'elenco del cast..."
                                     class="formbold-form-input" th:field="*{cast}"></textarea>
                             </div>
 
-                            <div class="formbold-input-group">
+                            <div id="isbn" class="formbold-input-group">
                                 <label for="name" class="formbold-form-label"> ISBN </label>
-                                <input type="text" name="name" id="name" placeholder="Inserisci il codice ISBN"
+                                <input type="text" name="name" placeholder="Inserisci il codice ISBN"
                                     class="formbold-form-input" th:field="*{isbn}"/>
                             </div>
 
@@ -237,6 +237,26 @@
         </div>
     </div>
 
+<script th:inline="javascript">
+  document.getElementById("libro").addEventListener('change', () => {
+	  document.getElementById("cast").style.display="none";
+	  document.getElementById("regista").style.display="none";
+	  document.getElementById("isbn").style.display="block";
+	  document.getElementById("editore").style.display="block";
+	  document.getElementById("cast").value="";
+	  document.getElementById("regista").value="";
+  })
+  
+  document.getElementById("film").addEventListener('change', () => {
+	  document.getElementById("cast").style.display="block";
+	  document.getElementById("regista").style.display="block";
+	  document.getElementById("isbn").style.display="none";
+	  document.getElementById("editore").style.display="none";
+	  document.getElementById("isbn").value="";
+	  document.getElementById("editore").value="";
+  })
+  
+</script>
 </body>
 
 </html>
