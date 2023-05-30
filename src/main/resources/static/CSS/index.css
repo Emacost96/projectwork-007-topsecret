@@ -379,6 +379,7 @@ section {
     align-items: center;
     padding: 2rem 9%;
     background: linear-gradient(transparent,rgba(0, 0, 0, 0.12),rgba(0, 0, 0, 0.611)rgba(0, 0, 0, 0.93)) !important;
+    margin-bottom: 20px;
 }
 
 .footer-text p{
@@ -386,6 +387,48 @@ section {
     color: var(--text-color);
 }
 
+footer form {
+	font-size: 19.6px;
+	text-align: center;
+	font-weight: bold;
+}
+footer .foot_form {
+	border: solid 2px var(--main-color) !important;
+	border-radius: 5px !important;
+}
+footer .input-box {
+	font-size: 16px;
+	text-align: center;
+	padding: 2px 30px;
+	background-color: var(--secondbg-color);
+	margin-right: 10px;
+}
+
+footer .submit-btn {
+	font-size: 16px;
+	padding: 2px 6px;
+	background-color: var(--main-color);
+}
+footer .col-2{
+	text-align: center;
+}
+footer img{
+	width: 100px;
+	height: 40px;
+}
+footer span {
+	text-align:center;
+	font-size: 22.6px;
+	color: white;
+}
+footer .foot_span2 {
+	color: gold;
+}
+footer h4{
+	color: white;
+	text-align:center;
+	margin-bottom:18px;
+}
 /*Responsiveness*/
 @media (max-width: 1200px) {
     html {
