@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="/CSS/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Dashboard Admin</title>
 </head>
@@ -27,33 +27,33 @@
 
 
             <div class="sidebar">
-                <a href="dashboard.html">
+                <a th:href="@{/dashboardAdmin}">
                     <i class='bx bxs-grid-alt'></i>
                     <h3>Dashboard</h3>
                 </a>
             </div>
             <div class="sidebar">
-                <a href="dashboardClientiAdmin.html">
+                <a th:href="@{/dashboardAdmin/clienti}">
                     <i class='bx bx-user'></i>
                     <h3>Clienti</h3>
                 </a>
             </div>
             <div class="sidebar">
-                <a href="dashboardOrdiniAdmin.html">
+                <a th:href="@{/dashboardAdmin/ordiniadmin}">
                     <i class='bx bx-receipt'></i>
                     <h3>Ordini</h3>
                 </a>
             </div>
             <div class="sidebar">
-                <a href="dashboardProdottiAdmin.html">
+                <a th:href="@{/dashboardAdmin/prodottiadmin}">
                     <i class='bx bx-task'></i>
                     <h3>Prodotti</h3>
                 </a>
             </div>
             <div class="sidebar">
-                <a href="dashboardAggiungiAdmin.html" class="active">
+                <a href="#" class="active">
                     <i class='bx bx-plus'></i>
-                    <h3>Aggiungi prodotto</h3>
+                    <h3>Aggiungi opera</h3>
                 </a>
             </div>
             <div class="sidebar">
@@ -73,11 +73,11 @@
             </div>
 
             <div class="recent-orders">
-                <h2>Aggiungi prodotto</h2>
+                <h2>Aggiungi opera</h2>
                 <div class="formbold-main-wrapper">
 
 
-                    <form action="#" method="POST">
+                    <form method="POST" enctype="multipart/form-data" th:object="${opera}">
 
                         <div class="corpo-sinistra">
 
@@ -89,7 +89,7 @@
                                 <div class="formbold-radio-flex">
                                     <div class="formbold-radio-group">
                                         <label class="formbold-radio-label">
-                                            <input class="formbold-input-radio" type="radio" name="ans" id="ans" />
+                                            <input class="formbold-input-radio" type="radio" value="L" name="tipologia" id="libro" th:field="*{tipologia}"/>
                                             Libro
                                             <span class="formbold-radio-checkmark"></span>
                                         </label>
@@ -97,7 +97,7 @@
 
                                     <div class="formbold-radio-group">
                                         <label class="formbold-radio-label">
-                                            <input class="formbold-input-radio" type="radio" name="ans" id="ans" />
+                                            <input class="formbold-input-radio" type="radio" value="F" name="tipologia" id="film" th:field="*{tipologia}"/>
                                             Film
                                             <span class="formbold-radio-checkmark"></span>
                                         </label>
@@ -108,14 +108,14 @@
 
                             <div class="formbold-input-group">
                                 <label for="name" class="formbold-form-label"> Titolo </label>
-                                <input type="text" name="name" id="name" placeholder="Inserisci titolo"
-                                    class="formbold-form-input" />
+                                <input type="text" name="titolo" id="titolo" placeholder="Inserisci titolo"
+                                    class="formbold-form-input" th:field="*{titolo}" />
                             </div>
 
                             <div class="formbold-input-group">
                                 <label for="age" class="formbold-form-label"> Anno Pubblicazione </label>
-                                <input type="text" name="age" id="age" placeholder="Inserisci l'anno"
-                                    class="formbold-form-input" />
+                                <input type="number" name="anno di pubblicazione" id="annodipubblicazione" placeholder="Inserisci l'anno"
+                                    class="formbold-form-input" th:field="*{annoDiPubblicazione}" required />
                             </div>
 
                             <div>
@@ -124,7 +124,7 @@
                                 </label>
                                 <textarea rows="6" name="message" id="message"
                                     placeholder="Inserisci qui la trama dell'opera..."
-                                    class="formbold-form-input"></textarea>
+                                    class="formbold-form-input" th:field="*{trama}"></textarea>
                             </div>
 
                         </div>
@@ -134,13 +134,13 @@
                             <div class="formbold-input-group">
                                 <label for="name" class="formbold-form-label"> Editore </label>
                                 <input type="text" name="name" id="name" placeholder="Inserisci editore"
-                                    class="formbold-form-input" />
+                                    class="formbold-form-input" th:field="*{editore}"/>
                             </div>
 
                             <div class="formbold-input-group">
                                 <label for="name" class="formbold-form-label"> Regista </label>
                                 <input type="text" name="name" id="name" placeholder="Inserisci regista"
-                                    class="formbold-form-input" />
+                                    class="formbold-form-input" th:field="*{regista}" />
                             </div>
 
                             <div>
@@ -149,29 +149,23 @@
                                 </label>
                                 <textarea rows="2" name="message" id="message"
                                     placeholder="Inserisci qui l'elenco del cast..."
-                                    class="formbold-form-input"></textarea>
+                                    class="formbold-form-input" th:field="*{cast}"></textarea>
                             </div>
 
                             <div class="formbold-input-group">
                                 <label for="name" class="formbold-form-label"> ISBN </label>
                                 <input type="text" name="name" id="name" placeholder="Inserisci il codice ISBN"
-                                    class="formbold-form-input" />
+                                    class="formbold-form-input" th:field="*{isbn}"/>
                             </div>
 
                             <div class="formbold-input-group">
                                 <label for="name" class="formbold-form-label"> Carica l'immagine dell'opera </label>
-                                <input type="file" name="name" id="name" class="formbold-form-input" />
+                                <input type="file" name="name" id="name" class="formbold-form-input" th:field="*{fileImmagine}" />
                             </div>
 
-                            <button class="formbold-btn">Inserisci opera</button>
+                            <button class="formbold-btn"value="registra opera">Inserisci opera</button>
                         </div>
-
-
-
-
                     </form>
-
-
                 </div>
             </div>
         </main>

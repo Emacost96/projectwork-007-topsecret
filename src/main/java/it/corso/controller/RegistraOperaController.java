@@ -13,7 +13,7 @@ import it.corso.service.OperaService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/registraopera")
+@RequestMapping("/aggiungiopera")
 public class RegistraOperaController {
 	
 
@@ -28,7 +28,7 @@ public class RegistraOperaController {
 	    
 		Opera opera = new Opera();
 		model.addAttribute("opera", opera);
-		return "registraOpera";
+		return "dashboardAggiungiAdmin";
 
 	}
 	
@@ -36,7 +36,7 @@ public class RegistraOperaController {
 	public String registraOpera(@ModelAttribute("opera") Opera opera) {
 
 	    operaService.registraOpera(opera);
-	    return "redirect:/admin";
+	    return "redirect:/dashboardAdmin";
 	}
 
 }
