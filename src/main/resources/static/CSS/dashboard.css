@@ -47,7 +47,7 @@ body {
     /* font-family: poppins, sans-serif; */
     font-family: 'segoe ui', sans-serif;
     font-size: 0.88rem;
-    background: linear-gradient(rgba(5, 5, 5, 0.774), rgba(5, 5, 5, 0.863)), url(/images/img1.jpg) no-repeat;
+    background: linear-gradient(rgba(5, 5, 5, 0.774), rgba(5, 5, 5, 0.863)), url(images/img1.jpg) no-repeat;
     background-size: cover;
     /* background: var(--color-background); */
     user-select: none;
@@ -524,6 +524,9 @@ main .recent-orders a {
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
     padding: 48px;
+    padding-left: 158px;
+    height: 680px;
+    
 }
 
 .formbold-main-wrapper form{
@@ -532,11 +535,20 @@ main .recent-orders a {
     
 }
 
-/* .formbold-main-wrapper form .corpo-destra {
-    margin-left: 50%;
+.corpo-destra {
+    /* margin-left: 50%;
     display: flex;
-    margin-top: -25%;
-} */
+    margin-top: -25%; */
+ 
+    position: relative;
+    width: 50%;
+    float: left;
+}
+
+.corpo-sinistra {
+    width: 50%;
+    float: left;
+}
 
 
 /* .formbold-form-wrapper {
@@ -546,12 +558,11 @@ main .recent-orders a {
     padding: 0px;
 } */
 
-.formbold-form-img {
-    margin-bottom: 45px;
-}
+
 
 .formbold-input-group {
     margin-bottom: 18px;
+    
 }
 
 .formbold-form-select {
@@ -630,7 +641,7 @@ main .recent-orders a {
 }
 
 .formbold-form-input {
-    width: 33%;
+    width: 80%;
     padding: 13px 22px;
     border-radius: 5px;
     border: 1px solid #dde3ec;
@@ -671,6 +682,10 @@ main .recent-orders a {
     background-color: var(--color-dark);
     color: rgb(0, 0, 0);
     cursor: pointer;
+    margin-top: 25px;
+
+    position: absolute;
+    right: 146px;
     margin-top: 25px;
 }
 
