@@ -33,7 +33,7 @@ public class PrenotazioneController {
     private Prenotazione prenotazione;
     private Opera opera;
 
-    @GetMapping
+    @GetMapping("/registra")
     public String getPage(Model model, @RequestParam("id") int id, HttpSession session) {
 
 	if (session.getAttribute("utente") == null)
@@ -48,19 +48,14 @@ public class PrenotazioneController {
 	prenotazione.setUtente(utenteService.findUtentebyId(((Utente) session.getAttribute("utente")).getId()));
 	prenotazione.setOpera(opera);
 	model.addAttribute("prenotazione", prenotazione);
-
-	return "confermaprenotazione";
-    }
-
-    @GetMapping("/registra")
-    public String registraPrenotazione() {
-
+	
 	operaService.registraOpera(opera);
 	prenotazioneService.registraPrenotazione(prenotazione);
 
-
-	return "redirect:/reserved";
+	return "redirect:/dettaglio?id=" + id;
     }
+
+   
 
     
 }

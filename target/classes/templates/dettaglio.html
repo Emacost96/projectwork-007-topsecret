@@ -12,15 +12,28 @@
         rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!--favicon-->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
     
     <title>Dettaglio</title>
 </head>
 
 <body>
+
+    <div class = "popup btn-box" id="popup">
+        <div class="contenuto-popup">
+        <h3>Vuoi noleggiare il seguente articolo: </h3>
+        <p>Titolo Film</p> 
+        <img src="/images/17-golden-eye.jpg">
+        <div class="buttons">
+            <button class="danger" id="btn-annulla">Annulla</button>
+            <a th:href="@{prenota/registra(id=${opera.id})}"><button class="success" >Conferma</button></a>
+        </div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
     <!-- header-->
     <header class="header slide_text">
-        <a th:href="@{/}" class="logo"><img src="images/icon007.png" class="icon-logo"><h2>James Bond</h2></a>
+        <a th:href="@{/}" class="logo"><img src="/images/icon007.png" class="icon-logo"><h2>James Bond</h2></a>
 
         <nav class="navbar">
             <a th:href="@{/}" class="active">Home</a>
@@ -75,16 +88,24 @@
                         </div>
                         <div class="cast">
                         	<div class="btn-box">
-                    			<a th:class="${opera.prenotato == true} ? danger : success" th:text="${opera.prenotato == true} ? 'Non disponibile' : 'Noleggia'" th:href="@{catalogo2(film)}" class="btn">Noleggia</a>
+                    			<a type="button" th:class="${opera.prenotato == true} ? danger : success" th:disabled="${opera.prenotato == true}" th:text="${opera.prenotato == true} ? 'Non disponibile' : 'Noleggia'" href="#" class="btn" id="btn-noleggia">Noleggia</a>
                 			</div>
                         </div>
                     </div>
 
                 </div>
+				
+                        <div class="cast">
+                        	<div class="btn-box">
+                    			<a type="button" th:class="${opera.prenotato == true} ? danger : success" th:disabled="${opera.prenotato == true}" th:text="${opera.prenotato == true} ? 'Non disponibile' : 'Noleggia'" href="#" class="btn" id="btn-noleggia">Noleggia</a>
+                			</div>
+                        </div>
+                    
 
+                </div>
                 
             </div>
-        </div>
+        
 
     </section>
 
@@ -107,6 +128,7 @@
     </div>
 	
 	<script src="/JS/carosello.js" defer></script>
+    <script src="/JS/PopUpDettaglio.js"></script>
 
 </body>
 

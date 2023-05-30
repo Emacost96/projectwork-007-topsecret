@@ -23,10 +23,12 @@ body {
     --text-color: white;
     --main-color: gold;
 }
+
 html {
     font-size: 62.5%;
     overflow-x: hidden;
 }
+
 .big_text {
     font-size: 16px;
 }
@@ -41,12 +43,12 @@ html {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    background: linear-gradient(rgba(0, 0, 0, 0.87),rgba(0, 0, 0, 0.778),transparent);
+    background: linear-gradient(rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.778), transparent);
     transition: .4s;
 }
 
 .header.sticky {
-    background: linear-gradient(rgba(0, 0, 0, 0.97),rgba(0, 0, 0, 0.907)transparent);
+    background: linear-gradient(rgba(0, 0, 0, 0.97), rgba(0, 0, 0, 0.907)transparent);
 }
 
 .logo {
@@ -60,6 +62,7 @@ html {
 .header a.active {
     color: var(--text-color);
 }
+
 .header h2 {
     float: right;
     margin: 1.8vh;
@@ -73,7 +76,7 @@ html {
     margin-top: 2px;
 }
 
-.navbar a{
+.navbar a {
     text-decoration: none;
     font-size: 2.1rem;
     color: var(--text-color);
@@ -82,7 +85,7 @@ html {
     transition: .3s;
 }
 
-.navbar a:hover{
+.navbar a:hover {
     color: var(--main-color);
 }
 
@@ -101,11 +104,11 @@ html {
 
     background-image: url("/images/JamesBond_sfondo2.jpg");
     background-size: cover;
-    
+
 }
 
 .container {
-   
+
     height: 75vh;
     display: grid;
     grid-template-columns: 480px 1fr;
@@ -134,7 +137,7 @@ html {
     background-position: center;
     background-position: fixed;
     display: flex;
-    
+
 }
 
 .poster img {
@@ -146,7 +149,7 @@ html {
 }
 
 
-.info > div {
+.info>div {
     margin-top: 32px;
     margin-bottom: 40px;
     margin-right: 32px;
@@ -185,7 +188,7 @@ html {
 
 .movie-cast .list {
     display: grid;
-    grid-template-columns: repeat(6,120px);
+    grid-template-columns: repeat(6, 120px);
     grid-gap: 32px;
 }
 
@@ -231,8 +234,8 @@ html {
 }
 
 .success {
-	box-sizing: content-box;
-	position: relative;
+    box-sizing: content-box;
+    position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -244,15 +247,15 @@ html {
     font-size: 1.8rem;
     font-weight: 600;
     letter-spacing: .1rem;
-	background-color: #198754;
-	text-decoration: none;
-	color: white;
-	padding: 5px;
+    background-color: #198754;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
 }
 
 .danger {
-	box-sizing: content-box;
-	position: relative;
+    box-sizing: content-box;
+    position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -264,32 +267,32 @@ html {
     font-size: 1.8rem;
     font-weight: 600;
     letter-spacing: .1rem;
-	background-color: #df4759;
-	text-decoration: none;
-	color: white;
-	padding: 5px;
+    background-color: #df4759;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
 }
 
 
 /* carosello immagini */
 
-.carosello{
+.carosello {
     padding: 20px;
     margin: 0;
     width: 100%;
     height: 25vh;
     display: flex;
     align-items: center;
-    background-color: rgba(25,25,25,255);
+    background-color: rgba(25, 25, 25, 255);
     overflow: hidden;
 }
 
-.wrapper{
+.wrapper {
     max-width: 200vh;
     position: relative;
 }
 
-.wrapper i{
+.wrapper i {
     top: 50%;
     height: 46px;
     width: 46px;
@@ -303,12 +306,12 @@ html {
     transform: translateY(-50%);
 }
 
-.wrapper i:first-child{
+.wrapper i:first-child {
     left: -23px;
     display: none;
 }
 
-.wrapper i:last-child{
+.wrapper i:last-child {
     right: -23px;
 }
 
@@ -320,22 +323,89 @@ html {
     scroll-behavior: smooth;
 }
 
-.carousel.dragging{
+.carousel.dragging {
     cursor: grab;
     scroll-behavior: auto;
 }
 
-.carousel.dragging.img{
+.carousel.dragging.img {
     pointer-events: none;
 }
 
-.carousel img{
+.carousel img {
     height: 220px;
     object-fit: cover;
-    margin-left: 30px; /* controllare in js */
+    margin-left: 30px;
+    /* controllare in js */
     width: calc(100% / 5);
 }
 
-.carousel img:first-child{
+.carousel img:first-child {
     margin-left: 0px;
+}
+
+.popup {
+    height: fit-content;
+    min-height: 500px;
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.719);
+    margin: auto;
+    z-index: 999;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    color: white;
+    box-sizing: content-box;
+    opacity: 0;
+    transition: 1s;
+    display: none;
+
+}
+
+.popup.show {
+    opacity: 100%;
+}
+
+.popup h3 {
+    font-size: 2.5rem;
+}
+
+.popup img {
+    height: 300px;
+    align-self: center;
+}
+
+.popup p {
+    font-size: 3.2rem;
+    color: gold;
+}
+
+.contenuto-popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 30px auto 0 auto;
+    gap: 15px;
+}
+
+.overlay {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.527);
+    position: absolute;
+    z-index: 998;
+    backdrop-filter: blur(4px);
+    display: none;
+}
+
+.buttons {
+    margin: 20px 0 40px 0;
+
+}
+
+.buttons button {
+    cursor: pointer;
 }
