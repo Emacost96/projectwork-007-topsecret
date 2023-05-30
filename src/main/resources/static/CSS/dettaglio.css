@@ -102,7 +102,7 @@ html {
 .sezione1 {
     height: 75vh;
 
-    background-image: url("/static/images/JamesBond_sfondo2.jpg");
+    background-image: url("/images/JamesBond_sfondo2.jpg");
     background-size: cover;
 
 }
@@ -360,6 +360,7 @@ html {
     box-sizing: content-box;
     opacity: 0;
     transition: 1s;
+    display: none;
 
 }
 

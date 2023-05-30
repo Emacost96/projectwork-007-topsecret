@@ -6,7 +6,6 @@ const btnAnnulla = document.getElementById("btn-annulla")
 btnNoleggio.addEventListener("click", function () {
 
     overlay.style.display = "block"
-    popup.style.display = "block"
     popup.classList.toggle("show")
 
 
@@ -14,6 +13,5 @@ btnNoleggio.addEventListener("click", function () {
 
 btnAnnulla.addEventListener("click", function() {
     overlay.style.display = "none"
-    popup.style.display = "none"
     popup.classList.toggle("show")
 })
