@@ -220,7 +220,7 @@ section {
     left: 0;
     width: 0;
     height: 100%;
-    background: var(--bg-color);
+    background: #0b0b0b;
 
     z-index: -1;
     transition: .5s;
@@ -408,7 +408,13 @@ footer .submit-btn {
 	font-size: 16px;
 	padding: 2px 6px;
 	background-color: var(--main-color);
+	transition: .5s;
 }
+footer .submit-btn:hover {
+	color: var(--main-color);
+	background-color: var(--secondbg-color);
+}
+
 footer .col-2{
 	text-align: center;
 }
