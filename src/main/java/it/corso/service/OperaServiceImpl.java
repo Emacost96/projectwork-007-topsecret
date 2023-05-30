@@ -30,7 +30,6 @@ public class OperaServiceImpl implements OperaService {
 			opera.setRegista(null);
 			opera.setCast(null);
 		}
-		
 
 
 		if (opera.getFileImmagine() != null && !opera.getFileImmagine().isEmpty()) {

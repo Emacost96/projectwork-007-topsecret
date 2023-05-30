@@ -18,7 +18,7 @@
             <div class="top">
                 <div class="logo">
                     <img src="/images/icon007.png">
-                    <h2>007</h2>
+                    <h2>Secret Agent</h2>
                 </div>
                 <div class="close" id="close-btn">
                     <i class='bx bx-x'>close</i>
@@ -33,19 +33,19 @@
                 </a>
             </div>
             <div class="sidebar">
-                <a th:href="@{dashboard/clienti}">
+                <a th:href="@{/dashboardAdmin/clienti}">
                     <i class='bx bx-user'></i>
                     <h3>Clienti</h3>
                 </a>
             </div>
             <div class="sidebar">
-                <a href="dashboardOrdiniAdmin.html">
+                <a th:href="@{/dashboardAdmin/ordiniadmin}">
                     <i class='bx bx-receipt'></i>
                     <h3>Ordini</h3>
                 </a>
             </div>
             <div class="sidebar">
-                <a href="dashboardProdottiAdmin.html">
+                <a th:href="@{/dashboardAdmin/prodottiadmin}">
                     <i class='bx bx-task'></i>
                     <h3>Prodotti</h3>
                 </a>
@@ -134,8 +134,8 @@
                             <td th:text="${o.isbn != null} ? ${o.isbn} : ' - '"></td>
                             <td th:text="${o.prenotato == false} ? 'Disponibile' : 'Prenotato'" th:class="${o.prenotato == false} ? success : warning ">Numero prodotto (ISBN)</td>
                             <td th:text="${o.tipologia == 'F'} ? ${o.regista} : 'Ian Fleming'"></td>
-                            <td><a th:href="@{dashboard/elimina(id=${o.id})}">Elimina</a></td>
-                            <td class="warning"><a th:if="${o.prenotato == true}" th:href="@{dashboard/ripristina(id=${o.id})}" >Ripristina</a></td>
+                            <td><a th:href="@{dashboardAdmin/elimina(id=${o.id})}">Elimina</a></td>
+                            <td class="warning"><a th:if="${o.prenotato == true}" th:href="@{dashboardAdmin/ripristina(id=${o.id})}">Ripristina</a></td>
                             
                         </tr>
                     </tbody>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="/CSS/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Dashboard Admin</title>
 </head>
@@ -17,8 +17,8 @@
         <aside>
             <div class="top">
                 <div class="logo">
-                    <img src="images/icon007.png">
-                    <h2>007</h2>
+                    <img src="/images/icon007.png">
+                    <h2>Secret Agent</h2>
                 </div>
                 <div class="close" id="close-btn">
                     <i class='bx bx-x'>close</i>
@@ -27,25 +27,25 @@
 
 
             <div class="sidebar">
-                <a href="dashboard.html" >
+                <a th:href="@{/dashboardAdmin}" >
                     <i class='bx bxs-grid-alt'></i>
                     <h3>Dashboard</h3>
                 </a>
             </div>
             <div class="sidebar">
-                <a href="dashboardClientiAdmin.html">
+                <a th:href="@{/dashboardAdmin/clienti}">
                     <i class='bx bx-user' ></i>
                     <h3>Clienti</h3>
                 </a>
             </div>
             <div class="sidebar">
-                <a href="dashboardOrdiniAdmin.html" class="active">
+                <a href="#" class="active">
                     <i class='bx bx-receipt'></i>
                     <h3>Ordini</h3>
                 </a>
             </div>
             <div class="sidebar">
-                <a href="dashboardProdottiAdmin.html">
+                <a th:href="@{/dashboardAdmin/prodottiadmin}">
                     <i class='bx bx-task'></i>
                     <h3>Prodotti</h3>
                 </a>
@@ -85,19 +85,12 @@
                         </tr>
                     </thead>
                     <tbody> <!-- tag per incapsulare tabelle -->
-                        <tr>
-                            <td>1</td>
-                            <td>15/05/2023</td>
-                            <td>Skyfall</td>
-                            <td>Mario Rossi</td>
-                            <td class="primary">Elimina</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>20/05/2023</td>
-                            <td>Spectre</td>
-                            <td>Giuseppe Verdi</td>
-                            <td class="primary">Elimina</td>
+                        <tr th:each="p : ${prenotazioni}">
+                            <td th:text="${p.id}">1</td>
+                            <td th:text="${#temporals.format(p.dataOraPrenotazione, 'dd/MM/yyyy HH:mm')}">15/05/2023</td>
+                            <td th:text="${p.opera.titolo}">Skyfall</td>
+                            <td th:text="${p.utente.nome} + ' ' + ${p.utente.cognome}">Mario Rossi</td>
+                            <td class="warning"><a th:if="${p.opera.prenotato == true}" th:href="@{dashboardAdmin/ripristina(id=${p.id})}" >Ripristina</a></td>
                         </tr>
                     </tbody>
                 </table>

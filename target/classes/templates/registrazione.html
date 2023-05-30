@@ -21,7 +21,7 @@
                         <button type="submit" class="submit-btn" value="Login">Login</button>
                         <input type="checkbox"><span>Ricordami</span>
                     </form>
-                    <a th:href="@{''}"><button type="button" class="btn" onclick="openRegister()">Iscriviti</button></a>
+                    <button type="button" class="btn" onclick="openRegister()">Iscriviti</button>
                     <a href="">Password dimenticata</a>
 
                     <a th:href="@{/}" class="home">Torna alla home</a>
@@ -55,9 +55,13 @@
 
         function openRegister(){
             card.style.transform = "rotateY(-180deg)"
+            var url = "/registrazione";
+            window.history.pushState(null, null, url);
         }
         function openLogin(){
             card.style.transform = "rotateY(0deg)"
+            var url = "/utente";
+            window.history.pushState(null, null, url);
         }
 
     </script>

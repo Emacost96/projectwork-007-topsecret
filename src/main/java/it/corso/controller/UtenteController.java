@@ -33,7 +33,7 @@ public class UtenteController {
 		model.addAttribute("utente", utente);
 		return "registrazione";
 	}
-	
+
 	@PostMapping
 	public String controllaUtente(
 			@RequestParam (name = "username") String username,
@@ -41,11 +41,11 @@ public class UtenteController {
 		HttpSession session)
 	{
 		if (adminService.checkAdminLogin(session, username, password))
-			return "redirect:/dashboard";
+			return "redirect:/dashboardAdmin";
 		
 		
 		else if(utenteService.controlloLogin(session, username, password))
-			return "redirect:/reserved"; // dove portiamo l'utente dopo avere loggato
+			return "redirect:/dashboardutente"; // dove portiamo l'utente dopo avere loggato
 		
 		else
 		return "redirect:/utente?le"; 

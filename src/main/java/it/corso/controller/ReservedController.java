@@ -14,7 +14,7 @@ import it.corso.service.PrenotazioneService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/reserved")
+@RequestMapping("/dashboardutente")
 public class ReservedController {
 
 
@@ -33,7 +33,7 @@ public class ReservedController {
 	    List<Prenotazione> prenotazioni = prenotazioneService.getPrenotazioneByIdUtente(utente.getId());
 	    model.addAttribute("prenotazioni", prenotazioni);
 
-		return "reserved";
+		return "dashboardUtente";
 	}
 	
 	

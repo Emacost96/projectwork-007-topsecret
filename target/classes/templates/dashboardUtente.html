@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="/CSS/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Dashboard Utente</title>
 </head>
@@ -17,7 +17,7 @@
         <aside>
             <div class="top">
                 <div class="logo">
-                    <img src="images/icon007.png">
+                    <img src="/images/icon007.png">
                     <h2>007</h2>
                 </div>
                 <div class="close" id="close-btn">
@@ -63,17 +63,10 @@
                         </tr>
                     </thead>
                     <tbody> <!-- tag per incapsulare tabelle -->
-                        <tr>
-                            <td>Prodotto 1</td>
-                            <td>Numero prodotto (ISBN)</td>
-                            <td>Disponibile / Prenotato</td>
-                            <td class="warning"> In attesa / pagato</td>
-                            <td class="primary">Dettagli</td>
-                        </tr>
-                        <tr>
-                            <td>Prodotto 2</td>
-                            <td>Numero prodotto (ISBN)</td>
-                            <td>Disponibile / Prenotato</td>
+                        <tr th:each="p : ${prenotazioni}">
+                            <td th:text="${p.opera.titolo}">Prodotto 1</td>
+                            <td th:text="${p.opera.isbn == null} ? ' - ' : '{p.opera.isbn}'">Numero prodotto (ISBN)</td>
+                            <td th:text="${p.opera.prenotato == false} ? 'Disponibile' : 'Prenotato'" th:class="${p.opera.prenotato == false} ? success : warning ">Disponibile / Prenotato</td>
                             <td class="warning"> In attesa / pagato</td>
                             <td class="primary">Dettagli</td>
                         </tr>
@@ -94,7 +87,7 @@
                 </div>
                 <div class="profile">
                     <div class="info">
-                        <p>Hey, <b>Utente 1</b></p>
+                        <p>Hey, <b th:text="${utente.username}">Utente 1</b></p>
                         <small class="text-muted">Utente standard</small><br>
                         <a href="#"><small class="text-muted" style="color: rgba(255, 217, 0, 0.479);">Passa a premium</small></a>
                     </div>
