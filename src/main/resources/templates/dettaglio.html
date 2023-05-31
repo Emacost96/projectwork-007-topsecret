@@ -88,24 +88,23 @@
                         </div>
                         <div class="cast">
                         	<div class="btn-box">
-                    			<a type="button" th:class="${opera.prenotato == true} ? danger : success" th:disabled="${opera.prenotato == true}" th:text="${opera.prenotato == true} ? 'Non disponibile' : 'Noleggia'" href="#" class="btn" id="btn-noleggia">Noleggia</a>
-                			</div>
-                        </div>
-                    </div>
+                    			<a th:if="${!opera.prenotato}" type="button" class="success"  style="cursor: pointer;" id="btn-noleggia">Noleggia</a>
+                				<a th:if="${opera.prenotato}" type="button" class="danger" style="cursor: default;">Non disponibile</a>
+                        	</div>
+                    	</div>
+                	
 
+                	</div>
                 </div>
-				
-                        <div class="cast" th:if="${opera.tipologia == 'L'}" >
-                        	<div class="btn-box">
-                    			<a type="button" th:class="${opera.prenotato == true} ? danger : success" th:disabled="${opera.prenotato == true}" th:text="${opera.prenotato == true} ? 'Non disponibile' : 'Noleggia'" href="#" class="btn" id="btn-noleggia">Noleggia</a>
-                			</div>
-                        </div>
-                    
-
+                <div class="cast" th:if="${opera.tipologia == 'L'}" > 
+                	<div class="btn-box">
+                    	<a th:if="${!opera.prenotato}" type="button" class="success"  style="cursor: pointer;" id="btn-noleggia">Noleggia</a>
+                		<a th:if="${opera.prenotato}" type="button" class="danger" style="cursor: default;">Non disponibile</a>
+                      </div>
                 </div>
                 
             </div>
-        
+        </div>
 
     </section>
 

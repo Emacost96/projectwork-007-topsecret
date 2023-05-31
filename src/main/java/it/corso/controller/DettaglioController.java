@@ -20,8 +20,9 @@ public class DettaglioController {
 	@GetMapping
 	public String getPage(
 			Model model,
-			@RequestParam("id") int id) {
-		Opera opera = dettaglioService.findOperaById(id);
+		@RequestParam("id") int id) {
+	    	
+    		Opera opera = dettaglioService.findOperaById(id);
 		model.addAttribute("opera", opera);
 		if(opera.getCast() != null) 
 			model.addAttribute("cast", opera.getCast().split(","));

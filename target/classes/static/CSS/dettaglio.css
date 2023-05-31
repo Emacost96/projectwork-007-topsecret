@@ -360,10 +360,13 @@ html {
     box-sizing: content-box;
     opacity: 0;
     transition: 1s;
+    display:none;
+
 
 }
 
 .popup.show {
+	display: block;
     opacity: 100%;
 }
 
