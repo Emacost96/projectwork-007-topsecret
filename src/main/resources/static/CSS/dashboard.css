@@ -370,8 +370,9 @@ main .recent-orders a {
     gap: 2rem;
 }
 
-.right .top i {
-    display: none;
+#icona-casa{
+	margin-right:10px;
+	font-size: 40px;
 }
 
 .right .theme-toggler {
