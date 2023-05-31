@@ -24,7 +24,7 @@ public class Opera {
 	private String tipologia;
 	
 	@Column(name = "titolo")
-	@Pattern(regexp = "[a-zA-Z0-9\\s']{1,50}", message = "Caratteri non ammessi")
+	@Pattern(regexp = "[a-zA-Z0-9\\s'-]{1,50}", message = "Caratteri non ammessi")
 	private String titolo;
 	
 	@Column(name = "anno_di_pubblicazione")
