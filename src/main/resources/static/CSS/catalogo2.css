@@ -355,7 +355,7 @@ section {
 /*fabri*/
 
 .text-animate .h3 {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 800;
   color: transparent;
   -webkit-text-stroke: .7px var(--main-color);
