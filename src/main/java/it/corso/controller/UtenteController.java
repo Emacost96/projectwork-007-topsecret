@@ -44,7 +44,7 @@ public class UtenteController {
 		
 		
 		else if(utenteService.controlloLogin(session, username, password))
-			return "redirect:/dashboardutente"; // dove portiamo l'utente dopo avere loggato
+		    return "redirect:/"; // dove portiamo l'utente dopo avere loggato
 		
 		else
 		return "redirect:/utente?le"; 

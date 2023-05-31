@@ -58,18 +58,18 @@
                     <thead>
                         <tr>
                             <th>Prodotto</th>
+                            <th>Tipologia</th>
                             <th>Codice Prodotto</th>
                             <th>Stato</th>
-                            <th>Pagamento</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody> <!-- tag per incapsulare tabelle -->
                         <tr th:each="p : ${prenotazioni}">
                             <td th:text="${p.opera.titolo}">Prodotto 1</td>
+                            <td th:text="${p.opera.tipologia == 'F'} ? 'Film' : 'Libro'"></td>
                             <td th:text="${p.opera.isbn == null} ? ' - ' : ${p.opera.isbn}">Numero prodotto (ISBN)</td>
                             <td th:text="${p.opera.prenotato == false} ? 'Disponibile' : 'Prenotato'" th:class="${p.opera.prenotato == false} ? success : warning ">Disponibile / Prenotato</td>
-                            <td class="warning"> In attesa / pagato</td>
                             <td class="primary">Dettagli</td>
                         </tr>
                     </tbody>
