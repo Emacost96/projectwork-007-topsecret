@@ -33,14 +33,14 @@
     <div class="overlay" id="overlay"></div>
     <!-- header-->
     <header class="header slide_text">
-        <a th:href="@{/}" class="logo"><img src="/images/icon007.png" class="icon-logo"><h2>James Bond</h2></a>
+        <a th:href="@{/}" class="logo hiddeny"><img src="/images/icon007.png" class="icon-logo hiddeny"><h2>James Bond</h2></a>
 
         <nav class="navbar">
-            <a th:href="@{/}" class="active">Home</a>
-            <a th:href="@{/#history}">Storia</a>
-            <a th:href="@{catalogo2('catalogo')}">Catalogo</a>
+            <a th:href="@{/}" class="active hiddeny">Home</a>
+            <a th:href="@{/#history}" class="hiddeny">Storia</a>
+            <a th:href="@{catalogo2('catalogo')}" class="hiddeny">Catalogo</a>
         <!--<a href="">Parliamone</a>-->
-            <a th:if="${utente == null}" th:href="@{utente}">Login</a>
+            <a th:if="${utente == null}" th:href="@{utente}" class="hiddeny">Login</a>
 			<div th:if="${utente != null}" class="profile-photo">
                 <a th:href="@{dashboardutente}"><img src="/images/daniel-craig-close-up-james-bond.jpg"></a>
             </div>
@@ -131,7 +131,7 @@
 	
 	<script src="/JS/carosello.js" defer></script>
     <script src="/JS/PopUpDettaglio.js"></script>
-
+	<script src="/JS/catalogo2.js"></script>
 </body>
 
 </html>
