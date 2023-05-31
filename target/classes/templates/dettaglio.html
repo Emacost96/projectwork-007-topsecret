@@ -23,7 +23,7 @@
         <div class="contenuto-popup">
         <h3>Vuoi noleggiare il seguente articolo: </h3>
         <p>Titolo Film</p> 
-        <img src="/images/17-golden-eye.jpg">
+        <img th:src="@{${opera.immagine}}">
         <div class="buttons">
             <button class="danger" id="btn-annulla">Annulla</button>
             <a th:href="@{prenota/registra(id=${opera.id})}"><button class="success" >Conferma</button></a>
@@ -55,7 +55,7 @@
                 <img th:src="@{${opera.immagine}}" alt="">
             </div>
             <div class="info">
-                <div class="movie-title" th:text="'Titolo: ' + ${opera.titolo}"> Titolo</div>
+                <div class="movie-title" th:text="${opera.titolo}"> Titolo</div>
 
                 <div class="movie-detail">
                     <div class="set">

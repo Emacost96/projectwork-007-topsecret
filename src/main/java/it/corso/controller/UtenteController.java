@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import ch.qos.logback.core.joran.conditional.ElseAction;
 import it.corso.model.Utente;
 import it.corso.service.AdminService;
 import it.corso.service.UtenteService;
@@ -28,7 +27,7 @@ public class UtenteController {
 			HttpSession session,
 			Model model) {
 		if (session.getAttribute("utente") != null)
-			return "redirect:/reserved"; // dove portiamo l'utente dopo avere loggato
+		    return "redirect:/registrazione"; // dove portiamo l'utente dopo avere loggato
 		Utente utente = new Utente();
 		model.addAttribute("utente", utente);
 		return "registrazione";
