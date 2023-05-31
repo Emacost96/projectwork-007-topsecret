@@ -80,14 +80,9 @@
         <!-- ------------ FINE MAIN ------------------>
         <div class="right">
             <div class="top">
-                <button id="menu-btn">
-                    <i class='bx bx-menu'></i>
-                </button>
-                <div class="theme-toggler">
-                    <i class='bx bxs-sun active'></i>
-                    <i class='bx bxs-moon'></i>
-                </div>
+                
                 <div class="profile">
+                <a th:href="@{/}" class="home"><i class='bx bxs-home' id='icona-casa'></i></a>
                     <div class="info">
                         <p>Hey, <b th:text="${utente.username}">Utente 1</b></p>
                         <small class="text-muted">Utente</small><br>
