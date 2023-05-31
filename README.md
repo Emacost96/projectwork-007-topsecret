@@ -2,7 +2,9 @@
 
 > Link al progetto su GitHub: [https://github.com/Emacost96/projectwork-007-topsecret](https://github.com/Emacost96/projectwork-007-topsecret)
 
-
+<p align="center">
+  <img src="https://i.imgur.com/NTm2Rzm.png" alt="007 logo" />
+</p>
 
 Il sito Agente 007 è stato creato come consegna finale del corso Generation Italy: Junior Java Developer.
 
