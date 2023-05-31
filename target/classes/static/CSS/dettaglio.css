@@ -436,3 +436,36 @@ html {
 .buttons button {
     cursor: pointer;
 }
+
+.hiddeny {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(-100%);
+  transition: all 1s;
+} 
+
+.showy {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+/* nth:child per la navbar */
+.hiddeny:nth-child(2){
+  transition-delay: 200ms;
+}
+
+.hiddeny:nth-child(3){
+  transition-delay: 400ms !important;
+}
+
+.hiddeny:nth-child(4){
+  transition-delay: 600ms;
+}
+
+.hiddeny:nth-child(5){
+  transition-delay: 800ms;
+}
+
+.hiddeny:nth-child(6){
+  transition-delay: 1000ms;
+}
