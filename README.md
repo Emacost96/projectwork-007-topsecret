@@ -1,48 +1,50 @@
 # Project Work - Sito Agente 007
 
-> Link del progetto su GitHub: [https://github.com/Emacost96/projectwork-007-topsecret](https://github.com/Emacost96/projectwork-007-topsecret)  
+> Link al progetto su GitHub: [https://github.com/Emacost96/projectwork-007-topsecret](https://github.com/Emacost96/projectwork-007-topsecret)
 
-<p align="center">
-  <img src="https://i.imgur.com/NTm2Rzm.png" alt="007 logo" />
-</p>
 
-Il sito Agente 007 è un sito realizzato per la consegna finale del corso di Generation Italy: Junior Java Developer.  
 
-In questo sito, è possibile (lato cliente) noleggiare dei film/libri sulla serie di James Bond. Sul lato admin, è possibile aggiungere nuove opere (che sono film oppure libri) tramite la sezione dashboard admin.
+Il sito Agente 007 è stato creato come consegna finale del corso Generation Italy: Junior Java Developer.
 
-## Consegna
-Si vuole realizzare il portale di un fan club dedicato all'agente James Bond che intende promuovere le proprie attività sul web.   
+Su questo sito è possibile (come cliente) noleggiare film/libri della serie di James Bond. Sul lato amministratore, è possibile aggiungere nuove opere (sia film che libri) tramite la sezione dashboard admin.
 
-Dalla home del sito dev'essere possibile accedere ai cataloghi relativi alle opere letterarie di Ian Fleming sull'agente segreto e ai film realizzati; ogni voce del catalogo è cliccabile per accedere ai dettagli del prodotto, che è possibile prendere in prestito presso il fan club previa registrazione al sito; i prodotti al momento già in prestito saranno presenti in catalogo ma con un'etichetta "Non disponibile".  
+## Descrizione
 
-La piattaforma dev'essere liberamente navigabile da parte di un visitatore non registrato e in più deve dare la possibilità di registrarsi agli utenti che vogliano prendere in prestito un'opera in possesso del club o ricevere aggiornamenti dal negozio tramite newsletter. Deve essere inoltre data la possibilità allo staff, che da apposito pannello di back-office ha a disposizione l'elenco degli utenti e quello delle opere, di effettuare le classiche operazioni su tutti i modelli presenti.
+L'obiettivo è creare il portale di un fan club dedicato all'agente James Bond che intende promuovere le proprie attività sul web.
+
+Dalla homepage del sito sarà possibile accedere ai cataloghi delle opere letterarie di Ian Fleming sull'agente segreto e ai film realizzati. Ogni voce del catalogo sarà cliccabile per accedere ai dettagli del prodotto, che potrà essere preso in prestito presso il fan club previa registrazione al sito. I prodotti attualmente in prestito saranno presenti nel catalogo, ma con l'etichetta "Non disponibile".
+
+La piattaforma sarà liberamente navigabile da parte di un visitatore non registrato e offrirà la possibilità di registrarsi agli utenti che desiderano prendere in prestito un'opera di proprietà del club o ricevere aggiornamenti dal negozio tramite newsletter. Lo staff avrà a disposizione un pannello di back-office con l'elenco degli utenti e delle opere, e potrà effettuare le classiche operazioni su tutti i modelli presenti.
 
 ## Installazione
 
-> Scaricare [Spring Tool Suite](https://spring.io/tools), [XAMPP](https://www.apachefriends.org/) e [GitHub desktop](https://desktop.github.com/).
+> Scaricare [Spring Tool Suite](https://spring.io/tools), [XAMPP](https://www.apachefriends.org/) e [GitHub Desktop](https://desktop.github.com/).
+
 ### Primi passi
-- Su GitHub desktop, fare un clone del progetto dentro al workspace di default di Spring Boot.
-- Su Spring Tool Suite, fare un importazione per aprire il file che contiene il seguente progetto (in questo caso la cartella è chiamata `projectwork-007-topsecret`).
-- Su GitHub desktop, fare il pull del progetto.
-- Su localhost:phpmyadmin, fare un nuovo database chiamata **james_bond**. 
-    - Dal database, fare l'importazione del file `james_bond.sql` dentro il workspace.
 
-- Far partire XAMPP come amministratore, startando Apache e MySQL.
-- Far partire il progetto su Spring Tool Suite come Spring Boot App.
-- Andare nel browser e sulla barra degli indirizzi digitare `localhost:8051`.
+- Utilizzare GitHub Desktop per clonare il progetto nella cartella di default di Spring Boot.
+- Utilizzare Spring Tool Suite per importare il file che contiene il progetto (la cartella sarà chiamata `projectwork-007-topsecret` in questo caso).
+- Eseguire il pull del progetto utilizzando GitHub Desktop.
+- Accedere a localhost:phpmyadmin e creare un nuovo database chiamato **james_bond**.
+    - Importare il file `james_bond.sql` nel database all'interno del workspace.
 
-## Funzioni del sito
-1. Possibilità di navigare e vedere la lista dei film/opere presenti sul sito senza fare il login/registrazione.
-2. Possibilità di fare il login ed eventualmente avere una dashboard per ciascun utente
-    - **Sezione Profilo** - elenco delle opere prenotate dal cliente stesso e anche la possibilità di vedere i suoi dati.
-    - **Sezione Logout** - possibilità di fare il logout
-3. Una dashboard soltanto per l'admin
-    - **Sezione Dashboard**, dove si vedono le liste degli utenti iscritti, le opere inserite, e le opere prenotate. Si vedono anche gli ordini. C'è anche la possibilità di eliminare un'opera oppure ripristinarla
-    - **Sezione Clienti** - elenco degli utenti iscritti con la possibilità di eliminarli
-    - **Sezione Ordini** - elenco delle opere prenotate, visualizzando anche la persona che ha prenotato l'opera stessa.
-    - **Sezione Prodotti** - elenco di tutte le opere e anche la possibilità di eliminarle.
-    - **Sezione Aggiungi Opera** - possibilità di aggiungere un'opera che verrà poi messo nel database una volta inserita e messa anche nella pagina catalogo.
-    - **Sezione Logout** - possibilità di fare il logout
+- Avviare XAMPP come amministratore, avviando Apache e MySQL.
+- Avviare il progetto su Spring Tool Suite come Spring Boot App.
+- Nel browser, digitare `localhost:8051` nella barra degli indirizzi.
+
+## Funzionalità del sito
+
+1. Possibilità di navigare e visualizzare l'elenco dei film/opere presenti sul sito senza effettuare il login/registrazione.
+2. Possibilità di effettuare il login e, eventualmente, accedere a una dashboard per ogni utente.
+    - **Sezione Profilo**: elenco delle opere prenotate dal cliente e la possibilità di visualizzare i propri dati.
+    - **Sezione Logout**: possibilità di effettuare il logout.
+3. Una dashboard dedicata all'amministratore.
+    - **Sezione Dashboard**: visualizzazione delle liste degli utenti registrati, delle opere inserite e delle opere prenotate. Saranno anche visibili gli ordini. Inoltre, sarà possibile eliminare un'opera o ripristinarla.
+    - **Sezione Clienti**: elenco degli utenti registrati con la possibilità di eliminarli.
+    - **Sezione Ordini**: elenco delle opere prenotate, mostrando anche la persona che ha effettuato la prenotazione.
+    - **Sezione Prodotti**: elenco di tutte le opere con la possibilità di eliminarle.
+    - **Sezione Aggiungi Opera**: possibilità di aggiungere un'opera che verrà inserita nel database e visualizzata nella pagina del catalogo.
+    - **Sezione Logout**: possibilità di effettuare il logout.
 
 ## Autori
 
@@ -55,4 +57,3 @@ La piattaforma dev'essere liberamente navigabile da parte di un visitatore non r
 - Emanuele Costantini
 - Hannah Gabrielle Santos
 - Nicola Stasi
-
