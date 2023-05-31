@@ -2,13 +2,10 @@
 
 > Link del progetto su GitHub: [https://github.com/Emacost96/projectwork-007-topsecret](https://github.com/Emacost96/projectwork-007-topsecret)  
 
-<p align="center">
-  ![Agent 007](https://i.imgur.com/qWPd4Cd.png)
+<p align="center" style="background-color:transparent!important">
+  <img src="https://i.imgur.com/qWPd4Cd.png" alt="007 logo" />
 </p>
 
-<style>
-img{background-color:transparent!important}
-</style>
 Il sito Agente 007 è un sito realizzato per la consegna finale del corso di Generation Italy: Junior Java Developer.  
 
 In questo sito, è possibile (lato cliente) noleggiare dei film/libri sulla serie di James Bond. Sul lato admin, è possibile aggiungere nuove opere (che sono film oppure libri) tramite la sezione dashboard admin.
@@ -58,3 +55,4 @@ La piattaforma dev'essere liberamente navigabile da parte di un visitatore non r
 - Emanuele Costantini
 - Hannah Gabrielle Santos
 - Nicola Stasi
+
