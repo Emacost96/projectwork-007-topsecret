@@ -22,7 +22,7 @@
     <div class = "popup btn-box" id="popup">
         <div class="contenuto-popup">
         <h3>Vuoi noleggiare il seguente articolo: </h3>
-        <p>Titolo Film</p> 
+        <p th:text="${opera.titolo}" style="font-weight: bold;" >Titolo Film</p> 
         <img th:src="@{${opera.immagine}}">
         <div class="buttons">
             <button class="danger" id="btn-annulla">Annulla</button>
