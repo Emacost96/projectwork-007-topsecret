@@ -295,6 +295,9 @@ section {
   height: 15rem;
   padding: 8vh;
 }
+.margin_cat {
+	margin: 16px 0;
+}
 
 /*Responsiveness*/
 @media (max-width: 1200px) {
@@ -379,7 +382,7 @@ section {
 .text-animate .h3 {
   font-size: 5rem;
   font-weight: 800;
-  color: transparent;
+  color: #ffd7003b;
   -webkit-text-stroke: .7px var(--main-color);
   text-align: center;
   padding: 30px;

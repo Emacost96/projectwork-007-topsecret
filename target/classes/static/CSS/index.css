@@ -354,13 +354,15 @@ section {
     text-align: center;
 }
 .title_brod {
-    color: rgb(4, 4, 4) !important;
-    -webkit-text-stroke: .5px rgb(255, 255, 255);
+  font-size: 5rem;
+  font-weight: 800;
+  color: #ffd7003b;
+  -webkit-text-stroke: .7px var(--main-color);
+  text-align: center;
+  padding: 30px;
+  padding-bottom: 50px;
 }
 
-.h_title span {
-    color: var(--main-color);
-}
 
 .h_content {
     text-align: center;

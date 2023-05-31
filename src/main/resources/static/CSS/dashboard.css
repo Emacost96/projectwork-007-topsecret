@@ -8,7 +8,7 @@
     /* diventa black */
     --color-info-dark:  #dce1eb;
     --color-info-light: #dce1eb;
-    --color-dark: rgba(227, 227, 14, 0.572);
+    --color-dark: rgb(233 226 5 / 82%);
     /* diventa gold */
     --color-light: rgba (132, 139, 200, 0.18);
     --color-primary-variant: #111e88;

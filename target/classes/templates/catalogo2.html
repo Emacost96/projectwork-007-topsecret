@@ -114,7 +114,7 @@
             <h3 class="h3 hiddenz" id="libriSectionText">Libri</h3>
         </div>
         <div class="row" id="libriSection">
-          <div class="col-md-3 hiddenxlibro" th:each="libro : ${libri}">
+          <div class="col-md-3 hiddenxlibro margin_cat" th:each="libro : ${libri}">
             <div class="cutter">
               <div class="card operacard">
                 <img th:src="@{${libro.immagine}}" class="card-img">
@@ -135,7 +135,7 @@
             <h3 class="h3 hiddenz" id="filmSectionText">Film</h3>
         </div>
         <div class="row" id="filmSection">
-          <div class="col-md-3 hiddenxfilm" th:each="movie : ${film}">
+          <div class="col-md-3 hiddenxfilm margin_cat" th:each="movie : ${film}">
             <div class="cutter">
               <div class="card operacard">
                 <img th:src="@{${movie.immagine}}" class="card-img">
