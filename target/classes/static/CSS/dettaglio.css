@@ -85,6 +85,28 @@ html {
     transition: .3s;
 }
 
+.profile-photo{
+	margin-left: 30px;
+	text-decoration: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profile-photo img,
+.profile-photo a {
+	margin-right: 26px;
+	max-width: 45px;
+    max-height: 45px;
+    object-fit: cover;
+    object-position: center;
+}
+
 .navbar a:hover {
     color: var(--main-color);
 }

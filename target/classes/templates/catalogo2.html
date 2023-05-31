@@ -25,7 +25,10 @@
             <a th:href="@{/#history}" class="hiddeny">Storia</a>
             <a th:href="@{catalogo2('catalogo')}" class="active hiddeny">Catalogo</a>
             <!--<a href="">Parliamone</a>-->
-            <a th:href="@{utente}" class="hiddeny">Login</a>
+            <a th:if="${utente == null}" th:href="@{utente}">Login</a>
+			<div th:if="${utente != null}" class="profile-photo">
+                <a th:href="@{dashboardutente}"><img src="/images/daniel-craig-close-up-james-bond.jpg"></a>
+            </div>
 
             <span class="active-nav"></span>
         </nav>

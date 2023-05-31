@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import it.corso.model.Opera;
 import it.corso.service.DettaglioService;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/dettaglio")
@@ -20,7 +21,10 @@ public class DettaglioController {
 	@GetMapping
 	public String getPage(
 			Model model,
-		@RequestParam("id") int id) {
+		@RequestParam("id") int id, HttpSession session) {
+	    if (session.getAttribute("utente") != null) {
+		model.addAttribute("utente", session);
+	    }
 	    	
     		Opera opera = dettaglioService.findOperaById(id);
 		model.addAttribute("opera", opera);
