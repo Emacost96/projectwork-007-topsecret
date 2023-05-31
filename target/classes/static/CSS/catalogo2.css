@@ -382,7 +382,7 @@ section {
 .text-animate .h3 {
   font-size: 5rem;
   font-weight: 800;
-  color: #ffd7003b;
+  color: #ffd700;
   -webkit-text-stroke: .7px var(--main-color);
   text-align: center;
   padding: 30px;

@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/CSS/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!--favicon-->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <title>Dashboard Admin</title>
+    <!--favicon-->
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
 <body>
@@ -88,7 +88,7 @@
                     <tbody> <!-- tag per incapsulare tabelle -->
                         <tr th:each="u : ${utenti}">
                             <td th:text="${u.nome} + ' ' + ${u.cognome}">Mario Rossi</td>
-                            <td th:text="${u.username}">mario.rossi@gmail.com</td>
+                            <td th:text="${u.email}">mario.rossi@gmail.com</td>
                             <td th:text="${u.username}">marrss</td>
                             <td class="primary"><a th:href="@{eliminautente(id=${u.id})}">Elimina</a></td>
                         </tr>

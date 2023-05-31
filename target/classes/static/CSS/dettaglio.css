@@ -168,7 +168,9 @@ html {
 .poster img {
     width: 480px;
     height: 65vh;
-    object-fit: cover;
+    justify-content: center;
+    display: flex;
+/*     object-fit: cover; */
     overflow: hidden;
     background-attachment: fixed;
 }
