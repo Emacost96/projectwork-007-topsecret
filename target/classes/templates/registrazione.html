@@ -24,8 +24,9 @@
                     </form>
                     <button type="button" class="btn" onclick="openRegister()">Iscriviti</button>
                     <a href="">Password dimenticata</a>
+                    <p th:if="${registrazioneEffettuata}" style="color: green; text-align: center; margin-top: 50px; font-size: 22px;">Registrazione effettuata con successo!</p>
 
-                    <a th:href="@{/}" class="home">Torna alla home</a>
+                    <a th:href="@{/}" class="home" style="font-size: 18px;">Torna alla home</a>
                 </div>
                 <div class="card-back">
                 <h2>REGISTRAZIONE</h2>
@@ -41,7 +42,7 @@
                     <button type="button" class="btn" onclick="openLogin()">Ho già un account</button>
                     <a href="">Password dimenticata</a>
                     
-                    <a th:href="@{/}" class="home">Torna alla home</a>
+                    <a th:href="@{/}" class="home" style="font-size: 18px;">Torna alla home</a>
                 </div>
             </div>
             

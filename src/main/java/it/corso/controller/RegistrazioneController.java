@@ -23,7 +23,7 @@ public class RegistrazioneController {
 		Utente utente = new Utente();
 		model.addAttribute("utente", utente);
 		return "registrazione";
-	}
+	}	
 	
 	@PostMapping
 	public String registraUtente(
@@ -33,9 +33,9 @@ public class RegistrazioneController {
 		if(utenteService.controlloRegistrazione(utente.getUsername(), utente.getEmail()))
 		{
 			utenteService.registraUtente(utente);
-			return "redirect:/registrazione";
+			return "redirect:/utente?re";
 		}
-		return "redirect:/registrazione";
+		return "redirect:/utente";
 	}
 	
 }

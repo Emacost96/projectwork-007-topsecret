@@ -24,10 +24,12 @@ public class UtenteController {
 	
 	@GetMapping
 	public String getPage(
+			@RequestParam(name = "re", required = false) String registrazioneEffettuata,
 			@RequestParam(name = "le", required = false) String erroreLogin,
 			HttpSession session,
 			Model model) {
 		model.addAttribute("erroreLogin", erroreLogin != null);
+		model.addAttribute("registrazioneEffettuata", registrazioneEffettuata != null);
 		if (session.getAttribute("utente") != null)
 		    return "redirect:/registrazione"; // dove portiamo l'utente dopo avere loggato
 		Utente utente = new Utente();
