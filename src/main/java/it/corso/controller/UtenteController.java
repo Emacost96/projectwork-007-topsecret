@@ -24,8 +24,10 @@ public class UtenteController {
 	
 	@GetMapping
 	public String getPage(
+			@RequestParam(name = "le", required = false) String erroreLogin,
 			HttpSession session,
 			Model model) {
+		model.addAttribute("erroreLogin", erroreLogin != null);
 		if (session.getAttribute("utente") != null)
 		    return "redirect:/registrazione"; // dove portiamo l'utente dopo avere loggato
 		Utente utente = new Utente();
@@ -37,7 +39,7 @@ public class UtenteController {
 	public String controllaUtente(
 			@RequestParam (name = "username") String username,
 			@RequestParam (name = "password") String password,
-		HttpSession session)
+			HttpSession session, Model model)
 	{
 		if (adminService.checkAdminLogin(session, username, password))
 			return "redirect:/dashboardAdmin";
@@ -46,14 +48,9 @@ public class UtenteController {
 		else if(utenteService.controlloLogin(session, username, password))
 		    return "redirect:/"; // dove portiamo l'utente dopo avere loggato
 		
-		else
-		return "redirect:/utente?le"; 
-		    
-		   
+		else {
+			return "redirect:/utente?le";
+
+		}
 	}
-	
-	
-	
-	
-	
 }

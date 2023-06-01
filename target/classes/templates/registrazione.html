@@ -18,7 +18,7 @@
                     <form method="POST" th:object="${utente}">
                         <input type="text" class="input-box" placeholder="Username" th:field="*{username}"required>
                         <input type="password" class="input-box" placeholder="Password" th:field="*{password}" required>
-                        <p class="error-log" id="errore-login">Password Errata!</p>
+                        <p style="color: red;" class="error-log" id="errore-login"  th:if="${erroreLogin}">Credenziali Errate!</p>
                         <button type="submit" class="submit-btn" value="Login">Login</button>
                         <input type="checkbox"><span>Ricordami</span>
                     </form>
@@ -64,6 +64,7 @@
             var url = "/utente";
             window.history.pushState(null, null, url);
         }
+        
 
     </script>
 
